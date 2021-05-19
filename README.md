@@ -1,6 +1,23 @@
-# AngularFirestore Wrapper
+# AngularFirestore-Deep
 
-Angular directive for detecting long clicks of an element in Angular 2 and up.
+Work with complex and deep objects while retaining all the great benefits from Firebase Firestore.
+
+<strong><pre>npm install --save @angularfirestore-deep</pre></strong>
+
+Firestore splits its data up into collections and documents which is what allows it to be scalable and fast.
+
+The issues that this can cause is that the best way to store your data might not be the best way to work with and display that data.
+
+It can also be more difficult to figure out how to store your data in a way that is not only cheap in terms of reads but also cheap in terms of performance/speed.
+
+AngularFireStore-Deep is meant to help developers solve these issues.
+
+### Documentation and Examples
+[Documentation]()
+
+
+
+
 
 It is as simple as:
 

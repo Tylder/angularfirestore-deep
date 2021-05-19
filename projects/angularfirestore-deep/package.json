@@ -2,7 +2,7 @@
   "name": "angularfirestore-deep",
   "version": "0.0.1",
   "scripts": {
-    "doc": "npx compodoc -p tsconfig.doc.json"
+    "doc": "npx compodoc -p tsconfig.doc.json --includes additional-docs"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,9 @@
     "firebase": ">=8.6.1"
   },
   "dependencies": {
-    "tslib": "^2.0.0"
+    "tslib": "^2.0.0",
+    "@angular/cdk": ">=11",
+    "@angular/fire": ">=6.x",
+    "firebase": ">=8.6.1"
   }
 }

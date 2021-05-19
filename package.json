@@ -10,7 +10,6 @@
     "build:demo": "ng build demo --prod",
     "publish:lib": "npm publish --dir=./dist/angularfirestore-deep",
     "publish:demo": "npx angular-cli-ghpages --dir=./dist/demo",
-
     "test": "ng test",
     "lint": "ng lint"
   },

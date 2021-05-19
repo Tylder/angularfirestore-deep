@@ -46,6 +46,45 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                     </ul>
                 </li>
+                    <li class="chapter additional">
+                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#additional-pages"'
+                            : 'data-target="#xs-additional-pages"' }>
+                            <span class="icon ion-ios-book"></span>
+                            <span>Additional documentation</span>
+                            <span class="icon ion-ios-arrow-down"></span>
+                        </div>
+                        <ul class="links collapse " ${ isNormalMode ? 'id="additional-pages"' : 'id="xs-additional-pages"' }>
+                                    <li class="link ">
+                                        <a href="additional-documentation/introduction.html" data-type="entity-link" data-context-id="additional">Introduction</a>
+                                    </li>
+                                    <li class="chapter inner">
+                                        <a data-type="chapter-link" href="additional-documentation/actions.html" data-context-id="additional">
+                                            <div class="menu-toggler linked" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#additional-page-cde0e8dcb3b8f73434ddd09aa74f6c26"' : 'data-target="#xs-additional-page-cde0e8dcb3b8f73434ddd09aa74f6c26"' }>
+                                                <span class="link-name">Actions</span>
+                                                <span class="icon ion-ios-arrow-down"></span>
+                                            </div>
+                                        </a>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="additional-page-cde0e8dcb3b8f73434ddd09aa74f6c26"' : 'id="xs-additional-page-cde0e8dcb3b8f73434ddd09aa74f6c26"' }>
+                                            <li class="link for-chapter2">
+                                                <a href="additional-documentation/actions/read.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Read</a>
+                                            </li>
+                                            <li class="link for-chapter2">
+                                                <a href="additional-documentation/actions/write.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Write</a>
+                                            </li>
+                                            <li class="link for-chapter2">
+                                                <a href="additional-documentation/actions/update.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Update</a>
+                                            </li>
+                                            <li class="link for-chapter2">
+                                                <a href="additional-documentation/actions/delete.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Delete</a>
+                                            </li>
+                                            <li class="link for-chapter2">
+                                                <a href="additional-documentation/actions/edit-name.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Edit Name</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                        </ul>
+                    </li>
                     <li class="chapter modules">
                         <a data-type="chapter-link" href="modules.html">
                             <div class="menu-toggler linked" data-toggle="collapse" ${ isNormalMode ?
@@ -57,7 +96,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </a>
                         <ul class="links collapse " ${ isNormalMode ? 'id="modules-links"' : 'id="xs-modules-links"' }>
                             <li class="link">
-                                <a href="modules/AngularfirestoreWrapperModule.html" data-type="entity-link">AngularfirestoreWrapperModule</a>
+                                <a href="modules/AngularfirestoreDeepWrapperModule.html" data-type="entity-link">AngularfirestoreDeepWrapperModule</a>
                             </li>
                 </ul>
                 </li>
@@ -70,7 +109,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
-                                <a href="classes/AngularFirestoreWrapper.html" data-type="entity-link">AngularFirestoreWrapper</a>
+                                <a href="classes/AngularFirestoreDeepWrapper.html" data-type="entity-link">AngularFirestoreDeepWrapper</a>
                             </li>
                             <li class="link">
                                 <a href="classes/SubCollectionQuery.html" data-type="entity-link">SubCollectionQuery</a>

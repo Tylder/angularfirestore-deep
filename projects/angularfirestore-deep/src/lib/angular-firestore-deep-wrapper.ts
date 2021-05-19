@@ -210,8 +210,8 @@ export class AngularFirestoreDeepWrapper<T> {
    * @param docFs - a docFs with potential queryFn
    * @param subCollectionQueries - see example
    */
-  protected listenForDocDeep$<A extends FirestoreItem>(docFs: AngularFirestoreDocument,
-                                                       subCollectionQueries: SubCollectionQuery[]): Observable<A> {
+  public listenForDocDeep$<A extends FirestoreItem>(docFs: AngularFirestoreDocument,
+                                                    subCollectionQueries: SubCollectionQuery[]): Observable<A> {
 
     const res$ = this.listenForDocDeepRecursiveHelper$(docFs, subCollectionQueries).pipe(
       map(data => data as A)
@@ -411,10 +411,10 @@ export class AngularFirestoreDeepWrapper<T> {
     );
   }
 
-  protected addDeep$<A extends FirestoreItem>(data: A,
-                                              collectionFs: AngularFirestoreCollection,
-                                              subCollectionWriters?: SubCollectionWriter[],
-                                              docId?: string): Observable<A> {
+  public addDeep$<A extends FirestoreItem>(data: A,
+                                           collectionFs: AngularFirestoreCollection,
+                                           subCollectionWriters?: SubCollectionWriter[],
+                                           docId?: string): Observable<A> {
 
     const split = this.splitDataIntoCurrentDocAndSubCollections(data, subCollectionWriters);
     const currentDoc = split.currentDoc;
@@ -545,7 +545,7 @@ export class AngularFirestoreDeepWrapper<T> {
    * Goes through each level and removes DbItemExtras
    * In case you wish to save the data
    */
-  protected cleanExtrasFromData<A extends FirestoreItem>(data: A, subCollectionWriters: SubCollectionWriter[]): A {
+  public cleanExtrasFromData<A extends FirestoreItem>(data: A, subCollectionWriters: SubCollectionWriter[]): A {
 
     // const dataToBeCleaned = cloneDeep(data); /* clone data so we dont modify the original */
     const dataToBeCleaned = data;
@@ -606,10 +606,10 @@ export class AngularFirestoreDeepWrapper<T> {
    * and then delete the old doc.
    * returns the new doc once the delete is done.
    */
-  protected changeDocName$<A extends FirestoreItem>(docFs: AngularFirestoreDocument,
-                                                    subCollectionQueries: SubCollectionQuery[],
-                                                    subCollectionWriters: SubCollectionWriter[],
-                                                    newName: string): Observable<any> {
+  public changeDocName$<A extends FirestoreItem>(docFs: AngularFirestoreDocument,
+                                                 subCollectionQueries: SubCollectionQuery[],
+                                                 subCollectionWriters: SubCollectionWriter[],
+                                                 newName: string): Observable<any> {
 
     const collectionFs: AngularFirestoreCollection = this.ngFirestore.collection(docFs.ref.parent);
 
@@ -670,9 +670,9 @@ export class AngularFirestoreDeepWrapper<T> {
    * Be careful when updating a document of any kind since we allow partial data there cannot be any type checking prior to update
    * so its possible to introduce spelling mistakes on attributes and so forth
    */
-  protected updateDeep$<A>(data: A,
-                           docFs: AngularFirestoreDocument,
-                           subCollectionWriters: SubCollectionWriter[]): Observable<any> {
+  public updateDeep$<A>(data: A,
+                        docFs: AngularFirestoreDocument,
+                        subCollectionWriters: SubCollectionWriter[]): Observable<any> {
 
     const batch = this.updateDeepToBatchHelper(data, docFs, subCollectionWriters);
 
