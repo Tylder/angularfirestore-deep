@@ -1,0 +1,36 @@
+{
+  "name": "angularfirestore-deep",
+  "version": "0.0.1",
+  "scripts": {
+    "doc": "npx compodoc -p tsconfig.doc.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tylder/angularfirestore-deep.git"
+  },
+  "homepage": "https://github.com/Tylder/angularfirestore-deep.git",
+  "author": {
+    "name": "Daniel Lofgren",
+    "email": "lofgrendaniel@hotmail.com"
+  },
+  "keywords": [
+    "angular",
+    "angularfire",
+    "firebase",
+    "firestore",
+    "wrapper",
+    "deep",
+    "extension",
+    "extended",
+    "helper"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/cdk": ">=11",
+    "@angular/fire": ">=6.x",
+    "firebase": ">=8.6.1"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

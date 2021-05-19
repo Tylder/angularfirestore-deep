@@ -1,0 +1,4834 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angularfirestore-deep documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/original.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">angularfirestore-deep documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li>AngularFirestoreWrapper</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/lib/angularfirestore-wrapper.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Main Wrapper.</p>
+
+            </p>
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#add$">add$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#addDeep$">addDeep$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#batchCommit">batchCommit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#changeDocName$">changeDocName$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#cleanExtrasFromData">cleanExtrasFromData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#delete$">delete$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#deleteDeep$">deleteDeep$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#deleteDeepByItem$">deleteDeepByItem$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#deleteDocByPath">deleteDocByPath</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#deleteMultiple$">deleteMultiple$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#deleteMultipleByPaths$">deleteMultipleByPaths$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#deleteMultipleDeep$">deleteMultipleDeep$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#getBatchFromDeleteItemInIndexedDocs">getBatchFromDeleteItemInIndexedDocs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#getBatchFromMoveItemInIndexedDocs">getBatchFromMoveItemInIndexedDocs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#getBatchFromTransferItemInIndexedDocs">getBatchFromTransferItemInIndexedDocs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getFirestoreDocumentsDeep$">getFirestoreDocumentsDeep$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getFirestoreDocumentsFromDbItem">getFirestoreDocumentsFromDbItem</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getPathsFromDbItemDeepRecursiveHelper">getPathsFromDbItemDeepRecursiveHelper</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#handleRes$">handleRes$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#listenForCollection$">listenForCollection$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#listenForCollectionRecursively">listenForCollectionRecursively</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#listenForDoc$">listenForDoc$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#listenForDocDeep$">listenForDocDeep$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#listenForDocDeepRecursiveHelper$">listenForDocDeepRecursiveHelper$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#moveItemInArray$">moveItemInArray$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#removeDataExtrasRecursiveHelper">removeDataExtrasRecursiveHelper</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#splitDataIntoCurrentDocAndSubCollections">splitDataIntoCurrentDocAndSubCollections</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#update$">update$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#updateDeep$">updateDeep$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#updateDeepToBatchHelper">updateDeepToBatchHelper</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#updateDocByPath$">updateDocByPath$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#updateIndexAfterDeleteInIndexedDocs">updateIndexAfterDeleteInIndexedDocs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#updateMultiple$">updateMultiple$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#updateMultipleByPaths$">updateMultipleByPaths$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(ngFirestore: AngularFirestore, defaultDocId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/lib/angularfirestore-wrapper.ts:75</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor for AngularFirestoreWrapper</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>ngFirestore</td>
+                                                  
+                                                        <td>
+                                                                    <code>AngularFirestore</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>The AngularFirestore injected from an Angular Class</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>defaultDocId</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>The default name of any Document when no name is given</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="add$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            add$
+                        </b>
+                        <a href="#add$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>add$(data: A, collectionFs: AngularFirestoreCollection, id?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="382"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:382</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                            <code>A</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>collectionFs</td>
+                                    <td>
+                                            <code>AngularFirestoreCollection</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;A&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addDeep$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            addDeep$
+                        </b>
+                        <a href="#addDeep$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addDeep$(data: A, collectionFs: AngularFirestoreCollection, subCollectionWriters?: <a href="../classes/SubCollectionWriter.html">SubCollectionWriter[]</a>, docId?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="414"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:414</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                            <code>A</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>collectionFs</td>
+                                    <td>
+                                            <code>AngularFirestoreCollection</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>subCollectionWriters</td>
+                                    <td>
+                                                <code><a href="../classes/SubCollectionWriter.html" target="_self" >SubCollectionWriter[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>docId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;A&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="batchCommit"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            batchCommit
+                        </b>
+                        <a href="#batchCommit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>batchCommit(batch: firebase.firestore.WriteBatch)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="1109"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:1109</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Turn a batch into an Observable instead of Promise.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>batch</td>
+                                    <td>
+                                            <code>firebase.firestore.WriteBatch</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeDocName$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            changeDocName$
+                        </b>
+                        <a href="#changeDocName$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>changeDocName$(docFs: AngularFirestoreDocument, subCollectionQueries: <a href="../classes/SubCollectionQuery.html">SubCollectionQuery[]</a>, subCollectionWriters: <a href="../classes/SubCollectionWriter.html">SubCollectionWriter[]</a>, newName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="609"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:609</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Firestore doesn&#39;t allow you do change the name or move a doc directly so you will have to create a new doc under the new name
+and then delete the old doc.
+returns the new doc once the delete is done.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>docFs</td>
+                                    <td>
+                                            <code>AngularFirestoreDocument</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>subCollectionQueries</td>
+                                    <td>
+                                                <code><a href="../classes/SubCollectionQuery.html" target="_self" >SubCollectionQuery[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>subCollectionWriters</td>
+                                    <td>
+                                                <code><a href="../classes/SubCollectionWriter.html" target="_self" >SubCollectionWriter[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>newName</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cleanExtrasFromData"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            cleanExtrasFromData
+                        </b>
+                        <a href="#cleanExtrasFromData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cleanExtrasFromData(data: A, subCollectionWriters: <a href="../classes/SubCollectionWriter.html">SubCollectionWriter[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="548"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:548</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Goes through each level and removes DbItemExtras
+In case you wish to save the data</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                            <code>A</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>subCollectionWriters</td>
+                                    <td>
+                                                <code><a href="../classes/SubCollectionWriter.html" target="_self" >SubCollectionWriter[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>A</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="delete$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            delete$
+                        </b>
+                        <a href="#delete$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>delete$(docFs: AngularFirestoreDocument)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="888"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:888</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>docFs</td>
+                                    <td>
+                                            <code>AngularFirestoreDocument</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteDeep$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            deleteDeep$
+                        </b>
+                        <a href="#deleteDeep$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteDeep$(docFs: AngularFirestoreDocument, subCollectionQueries: <a href="../classes/SubCollectionQuery.html">SubCollectionQuery[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="952"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:952</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>docFs</td>
+                                    <td>
+                                            <code>AngularFirestoreDocument</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>subCollectionQueries</td>
+                                    <td>
+                                                <code><a href="../classes/SubCollectionQuery.html" target="_self" >SubCollectionQuery[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteDeepByItem$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            deleteDeepByItem$
+                        </b>
+                        <a href="#deleteDeepByItem$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteDeepByItem$(item: <a href="../interfaces/FirestoreItem.html">FirestoreItem</a>, subCollectionQueries: <a href="../classes/SubCollectionQuery.html">SubCollectionQuery[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="967"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:967</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>item</td>
+                                    <td>
+                                                <code><a href="../interfaces/FirestoreItem.html" target="_self" >FirestoreItem</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>subCollectionQueries</td>
+                                    <td>
+                                                <code><a href="../classes/SubCollectionQuery.html" target="_self" >SubCollectionQuery[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteDocByPath"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            deleteDocByPath
+                        </b>
+                        <a href="#deleteDocByPath"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteDocByPath(path: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="730"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:730</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>path</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteMultiple$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            deleteMultiple$
+                        </b>
+                        <a href="#deleteMultiple$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteMultiple$(docsFs: AngularFirestoreDocument[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="903"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:903</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>docsFs</td>
+                                    <td>
+                                            <code>AngularFirestoreDocument[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteMultipleByPaths$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            deleteMultipleByPaths$
+                        </b>
+                        <a href="#deleteMultipleByPaths$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteMultipleByPaths$(paths: string[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="915"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:915</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>paths</td>
+                                    <td>
+                                            <code>string[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteMultipleDeep$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            deleteMultipleDeep$
+                        </b>
+                        <a href="#deleteMultipleDeep$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteMultipleDeep$(docsFs: AngularFirestoreDocument[], subCollectionQueries: <a href="../classes/SubCollectionQuery.html">SubCollectionQuery[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="925"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:925</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>docsFs</td>
+                                    <td>
+                                            <code>AngularFirestoreDocument[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>subCollectionQueries</td>
+                                    <td>
+                                                <code><a href="../classes/SubCollectionQuery.html" target="_self" >SubCollectionQuery[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBatchFromDeleteItemInIndexedDocs"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            getBatchFromDeleteItemInIndexedDocs
+                        </b>
+                        <a href="#getBatchFromDeleteItemInIndexedDocs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getBatchFromDeleteItemInIndexedDocs(array: A[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="861"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:861</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>array</td>
+                                    <td>
+                                            <code>A[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>firebase.firestore.WriteBatch</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBatchFromMoveItemInIndexedDocs"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            getBatchFromMoveItemInIndexedDocs
+                        </b>
+                        <a href="#getBatchFromMoveItemInIndexedDocs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getBatchFromMoveItemInIndexedDocs(array: Array<A>, fromIndex: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, toIndex: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, useCopy)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="770"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:770</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>array</td>
+                                    <td>
+                                            <code>Array&lt;A&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>fromIndex</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>toIndex</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>useCopy</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>firebase.firestore.WriteBatch</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBatchFromTransferItemInIndexedDocs"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            getBatchFromTransferItemInIndexedDocs
+                        </b>
+                        <a href="#getBatchFromTransferItemInIndexedDocs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getBatchFromTransferItemInIndexedDocs(previousArray: A[], currentArray: A[], previousIndex: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, currentIndex: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, additionalDataUpdateOnMovedItem?: literal type, useCopy)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="811"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:811</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>previousArray</td>
+                                    <td>
+                                            <code>A[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>currentArray</td>
+                                    <td>
+                                            <code>A[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>previousIndex</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>currentIndex</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>additionalDataUpdateOnMovedItem</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>useCopy</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>firebase.firestore.WriteBatch</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFirestoreDocumentsDeep$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            getFirestoreDocumentsDeep$
+                        </b>
+                        <a href="#getFirestoreDocumentsDeep$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFirestoreDocumentsDeep$(docFs: AngularFirestoreDocument, subCollectionQueries: <a href="../classes/SubCollectionQuery.html">SubCollectionQuery[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="999"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:999</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns an Observable containing a list of AngularFirestoreDocument found under the given docFs using the SubCollectionQuery[]
+Mainly used to delete a docFs and its sub docs</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>docFs</td>
+                                    <td>
+                                            <code>AngularFirestoreDocument</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>: AngularFirestoreDocument</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>subCollectionQueries</td>
+                                    <td>
+                                                <code><a href="../classes/SubCollectionQuery.html" target="_self" >SubCollectionQuery[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>: SubCollectionQuery[]</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;AngularFirestoreDocument[]&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFirestoreDocumentsFromDbItem"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            getFirestoreDocumentsFromDbItem
+                        </b>
+                        <a href="#getFirestoreDocumentsFromDbItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFirestoreDocumentsFromDbItem(dbItem: <a href="../interfaces/FirestoreItem.html">FirestoreItem</a>, subCollectionQueries: <a href="../classes/SubCollectionQuery.html">SubCollectionQuery[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="1015"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:1015</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dbItem</td>
+                                    <td>
+                                                <code><a href="../interfaces/FirestoreItem.html" target="_self" >FirestoreItem</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>subCollectionQueries</td>
+                                    <td>
+                                                <code><a href="../classes/SubCollectionQuery.html" target="_self" >SubCollectionQuery[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>AngularFirestoreDocument[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPathsFromDbItemDeepRecursiveHelper"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            getPathsFromDbItemDeepRecursiveHelper
+                        </b>
+                        <a href="#getPathsFromDbItemDeepRecursiveHelper"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPathsFromDbItemDeepRecursiveHelper(dbItem: <a href="../interfaces/FirestoreItem.html">FirestoreItem</a>, subCollectionQueries: <a href="../classes/SubCollectionQuery.html">SubCollectionQuery[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="1028"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:1028</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>DO NOT CALL THIS METHOD, its meant as a support method for getDocs$</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dbItem</td>
+                                    <td>
+                                                <code><a href="../interfaces/FirestoreItem.html" target="_self" >FirestoreItem</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>subCollectionQueries</td>
+                                    <td>
+                                                <code><a href="../classes/SubCollectionQuery.html" target="_self" >SubCollectionQuery[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>string[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleRes$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            handleRes$
+                        </b>
+                        <a href="#handleRes$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleRes$(result$: Observable<A>, name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, data: literal type, successMessage?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, errorMessage?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="1124"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:1124</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>result$</td>
+                                    <td>
+                                            <code>Observable&lt;A&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>name</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>successMessage</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>errorMessage</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;A&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listenForCollection$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            listenForCollection$
+                        </b>
+                        <a href="#listenForCollection$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>listenForCollection$(collectionFs: <a href="../interfaces/FirestoreItem.html">AngularFirestoreCollection<FirestoreItem></a>, listenToTypes?: DocumentChangeType[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="155"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:155</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>collectionFs</td>
+                                    <td>
+                                                <code><a href="../interfaces/FirestoreItem.html" target="_self" >AngularFirestoreCollection&lt;FirestoreItem&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>listenToTypes</td>
+                                    <td>
+                                            <code>DocumentChangeType[]</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;A[]&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listenForCollectionRecursively"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            listenForCollectionRecursively
+                        </b>
+                        <a href="#listenForCollectionRecursively"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>listenForCollectionRecursively(path: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, collectionKey: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderKey?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="330"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:330</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>path</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>collectionKey</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>orderKey</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listenForDoc$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            listenForDoc$
+                        </b>
+                        <a href="#listenForDoc$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>listenForDoc$(docFs: <a href="../interfaces/FirestoreItem.html">AngularFirestoreDocument<FirestoreItem></a>, actionIfNotExist: <a href="../undefineds/DocNotExistAction.html">DocNotExistAction</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="100"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:100</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>docFs</td>
+                                    <td>
+                                                <code><a href="../interfaces/FirestoreItem.html" target="_self" >AngularFirestoreDocument&lt;FirestoreItem&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>actionIfNotExist</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#DocNotExistAction" target="_self" >DocNotExistAction</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>DocNotExistAction.RETURN_ALL_BUT_DATA</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;A&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listenForDocDeep$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            listenForDocDeep$
+                        </b>
+                        <a href="#listenForDocDeep$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>listenForDocDeep$(docFs: AngularFirestoreDocument, subCollectionQueries: <a href="../classes/SubCollectionQuery.html">SubCollectionQuery[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="213"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:213</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Wrapper for listenForDocDeepRecursiveHelper$ so that we can cast the return to the correct type
+All logic is in listenForDocDeepRecursiveHelper$.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>docFs</td>
+                                    <td>
+                                            <code>AngularFirestoreDocument</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>a docFs with potential queryFn</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>subCollectionQueries</td>
+                                    <td>
+                                                <code><a href="../classes/SubCollectionQuery.html" target="_self" >SubCollectionQuery[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>see example</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;A&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listenForDocDeepRecursiveHelper$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            listenForDocDeepRecursiveHelper$
+                        </b>
+                        <a href="#listenForDocDeepRecursiveHelper$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>listenForDocDeepRecursiveHelper$(docFs: AngularFirestoreDocument, subCollectionQueries: <a href="../classes/SubCollectionQuery.html">SubCollectionQuery[]</a>, actionIfNotExist: <a href="../undefineds/DocNotExistAction.html">DocNotExistAction</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="226"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:226</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>DO NOT CALL THIS METHOD, meant to be used solely by listenForDocAndSubCollections$</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>docFs</td>
+                                    <td>
+                                            <code>AngularFirestoreDocument</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>subCollectionQueries</td>
+                                    <td>
+                                                <code><a href="../classes/SubCollectionQuery.html" target="_self" >SubCollectionQuery[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>actionIfNotExist</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#DocNotExistAction" target="_self" >DocNotExistAction</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>DocNotExistAction.RETURN_NULL</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/FirestoreItem.html" target="_self" >Observable&lt;FirestoreItem&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="moveItemInArray$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            moveItemInArray$
+                        </b>
+                        <a href="#moveItemInArray$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>moveItemInArray$(array: A[], fromIndex: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, toIndex: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="758"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:758</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>array</td>
+                                    <td>
+                                            <code>A[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>fromIndex</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>toIndex</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeDataExtrasRecursiveHelper"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            removeDataExtrasRecursiveHelper
+                        </b>
+                        <a href="#removeDataExtrasRecursiveHelper"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeDataExtrasRecursiveHelper(dbItem: A, subCollectionWriters: <a href="../classes/SubCollectionWriter.html">SubCollectionWriter[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="555"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:555</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dbItem</td>
+                                    <td>
+                                            <code>A</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>subCollectionWriters</td>
+                                    <td>
+                                                <code><a href="../classes/SubCollectionWriter.html" target="_self" >SubCollectionWriter[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>A</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="splitDataIntoCurrentDocAndSubCollections"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            splitDataIntoCurrentDocAndSubCollections
+                        </b>
+                        <a href="#splitDataIntoCurrentDocAndSubCollections"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>splitDataIntoCurrentDocAndSubCollections(data: A, subCollectionWriters?: <a href="../classes/SubCollectionWriter.html">SubCollectionWriter[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="1073"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:1073</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>DO  NOT  CALL THIS METHOD, used in addDeep and updateDeep to split the data into currentDoc and subCollections
+Onyl goes one sub level deep;</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                            <code>A</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>subCollectionWriters</td>
+                                    <td>
+                                                <code><a href="../classes/SubCollectionWriter.html" target="_self" >SubCollectionWriter[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/CurrentDocSubCollectionSplit.html" target="_self" >CurrentDocSubCollectionSplit</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="update$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            update$
+                        </b>
+                        <a href="#update$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>update$(data: A, docFs: AngularFirestoreDocument)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="649"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:649</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                            <code>A</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>docFs</td>
+                                    <td>
+                                            <code>AngularFirestoreDocument</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;boolean&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateDeep$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            updateDeep$
+                        </b>
+                        <a href="#updateDeep$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateDeep$(data: A, docFs: AngularFirestoreDocument, subCollectionWriters: <a href="../classes/SubCollectionWriter.html">SubCollectionWriter[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="673"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:673</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Be careful when updating a document of any kind since we allow partial data there cannot be any type checking prior to update
+so its possible to introduce spelling mistakes on attributes and so forth</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                            <code>A</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>docFs</td>
+                                    <td>
+                                            <code>AngularFirestoreDocument</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>subCollectionWriters</td>
+                                    <td>
+                                                <code><a href="../classes/SubCollectionWriter.html" target="_self" >SubCollectionWriter[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateDeepToBatchHelper"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            updateDeepToBatchHelper
+                        </b>
+                        <a href="#updateDeepToBatchHelper"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateDeepToBatchHelper(data: A, docFs: AngularFirestoreDocument, subCollectionWriters: <a href="../classes/SubCollectionWriter.html">SubCollectionWriter[]</a>, batch?: WriteBatch)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="689"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:689</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>DO NOT CALL THIS METHOD, used by update deep</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                            <code>A</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>docFs</td>
+                                    <td>
+                                            <code>AngularFirestoreDocument</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>subCollectionWriters</td>
+                                    <td>
+                                                <code><a href="../classes/SubCollectionWriter.html" target="_self" >SubCollectionWriter[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>batch</td>
+                                    <td>
+                                            <code>WriteBatch</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>WriteBatch</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateDocByPath$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            updateDocByPath$
+                        </b>
+                        <a href="#updateDocByPath$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateDocByPath$(path: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, data: A)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="725"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:725</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>path</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                            <code>A</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateIndexAfterDeleteInIndexedDocs"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            updateIndexAfterDeleteInIndexedDocs
+                        </b>
+                        <a href="#updateIndexAfterDeleteInIndexedDocs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateIndexAfterDeleteInIndexedDocs(array: A[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="881"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:881</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>array</td>
+                                    <td>
+                                            <code>A[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateMultiple$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            updateMultiple$
+                        </b>
+                        <a href="#updateMultiple$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateMultiple$(docs: AngularFirestoreDocument[], data: A)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="735"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:735</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>docs</td>
+                                    <td>
+                                            <code>AngularFirestoreDocument[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                            <code>A</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateMultipleByPaths$"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            updateMultipleByPaths$
+                        </b>
+                        <a href="#updateMultipleByPaths$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateMultipleByPaths$(paths: string[], data: A)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="746"
+                            class="link-to-prism">src/lib/angularfirestore-wrapper.ts:746</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>A</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>paths</td>
+                                    <td>
+                                            <code>string[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                            <code>A</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {combineLatest, from, Observable, of} from &#x27;rxjs&#x27;;
+import {
+  Action,
+  AngularFirestore,
+  AngularFirestoreDocument, DocumentChangeAction,
+  DocumentChangeType,
+  DocumentReference,
+  DocumentSnapshotExists
+} from &#x27;@angular/fire/firestore&#x27;;
+import {CollectionReference, DocumentSnapshot} from &#x27;@angular/fire/firestore/interfaces&#x27;;
+import {catchError, filter, map, mergeMap, switchMap, take, tap} from &#x27;rxjs/operators&#x27;;
+import {AngularFirestoreCollection} from &#x27;@angular/fire/firestore/collection/collection&#x27;;
+import {moveItemInArray, transferArrayItem} from &#x27;@angular/cdk/drag-drop&#x27;;
+
+import firebase from &#x27;firebase&#x27;;
+import WriteBatch &#x3D; firebase.firestore.WriteBatch;
+import FirestoreError &#x3D; firebase.firestore.FirestoreError;
+import DocumentData &#x3D; firebase.firestore.DocumentData;
+import {FirestoreItem, DbItemFullWithIndex} from &#x27;./models/firestoreItem&#x27;;
+import {SubCollectionQuery} from &#x27;./sub-collection-query&#x27;;
+import {SubCollectionWriter} from &#x27;./sub-collection-writer&#x27;;
+
+import {
+  getRefFromPath,
+  getCollectionFsFromPath,
+  getDocFsFromPath,
+  getParentDocFsFromPath,
+  convertTimestampToDate,
+  addCreatedDate,
+  addModifiedDate
+} from &#x27;./angularfirestore-helpers&#x27;;
+
+
+/** Used as a wrapper for adding a document, either doc or path must be specified, helps when adding multiple */
+export interface AddDocumentWrapper&lt;A&gt; {
+  /** The data to be added */
+  data: A;
+
+  /** AngularFirestoreDocument of the Document */
+  docFs?: AngularFirestoreDocument;
+
+  /** The path to the Document */
+  path?: string;
+}
+
+
+export enum DocNotExistAction {
+  /** returns a null object */
+  RETURN_NULL,
+
+  /** return all the extras such as ref, path and so on but no data, kinda just ignores that the doc isn&#x27;t there */
+  RETURN_ALL_BUT_DATA,
+
+  /** do not return at all until it does exist */
+  FILTER,
+
+  /** return doc not found error &#x27;doc_not_found&#x27; */
+  THROW_DOC_NOT_FOUND,
+}
+
+
+/** Used internally */
+interface CurrentDocSubCollectionSplit {
+  currentDoc: FirestoreItem;
+  subCollections: {[index: string]: any};
+}
+
+
+/**
+ * Main Wrapper.
+ *
+ *
+ *
+ */
+export class AngularFirestoreWrapper&lt;T&gt; {
+
+  /**
+   * Constructor for AngularFirestoreWrapper
+   *
+   * @param ngFirestore The AngularFirestore injected from an Angular Class
+   * @param defaultDocId The default name of any Document when no name is given
+   */
+  constructor(private ngFirestore: AngularFirestore,
+              private defaultDocId: string &#x3D; &#x27;data&#x27;) {}
+
+  /* ----------  LISTEN -------------- */
+
+  // listenForChangesInBaseCollection$(): Observable&lt;T[]&gt; {
+  //   return this.listenForCollection$(this.baseCollectionFs);
+  // }
+
+  // protected listenForDocInBaseCollectionById&lt;A&gt;(id: string, actionIfNotExist: DocNotExistAction &#x3D; DocNotExistAction.RETURN_ALL_BUT_DATA):
+  //   Observable&lt;A&gt; {
+  //   return this.listenForDoc$(
+  //     this.baseCollectionFs.doc(id),
+  //     actionIfNotExist
+  //   );
+  // }
+
+  protected listenForDoc$&lt;A extends FirestoreItem&gt;(docFs: AngularFirestoreDocument&lt;FirestoreItem&gt;,
+                                                   actionIfNotExist: DocNotExistAction &#x3D; DocNotExistAction.RETURN_ALL_BUT_DATA):
+    Observable&lt;A&gt; {
+    /**
+     * Returns an observable that will emit whenever the ref changes in any way.
+     * Also adds the id and ref to the object.
+     */
+    const res$ &#x3D; docFs.snapshotChanges().pipe(
+      // mergeMap((action) &#x3D;&gt; {
+      //   if (!action.payload.exists) { return throwError(&#x27;Document Does not exists&#x27;); }
+      //   else { return of(action); }
+      // }),
+
+      tap((action: Action&lt;DocumentSnapshotExists&lt;A&gt;&gt;) &#x3D;&gt; {
+        if (!action.payload.exists &amp;&amp; actionIfNotExist &#x3D;&#x3D;&#x3D; DocNotExistAction.THROW_DOC_NOT_FOUND) {
+          throw new Error(&#x27;doc_not_found&#x27;);
+        }
+      }),
+
+      filter((action: Action&lt;DocumentSnapshotExists&lt;A&gt;&gt;) &#x3D;&gt; {
+        return !(!action.payload.exists &amp;&amp; actionIfNotExist &#x3D;&#x3D;&#x3D; DocNotExistAction.FILTER);
+      }),
+      map((action: Action&lt;DocumentSnapshotExists&lt;A&gt;&gt;) &#x3D;&gt; {
+
+        if (action.payload.exists || actionIfNotExist &#x3D;&#x3D;&#x3D; DocNotExistAction.RETURN_ALL_BUT_DATA) {
+          const data &#x3D; action.payload.data() as A;
+          // const payload: DocumentSnapshotExists&lt;DocumentData&gt; &#x3D; action.payload as DocumentSnapshotExists&lt;DocumentData&gt;;
+          // @ts-ignore
+          const id &#x3D; action.payload.id;
+          // @ts-ignore
+          const docRef &#x3D; action.payload.ref;
+          const path &#x3D; docRef.path;
+          const _docFs &#x3D; this.ngFirestore.doc(path);
+          const isExists: boolean &#x3D; action.payload.exists;
+
+          // const afDocRef &#x3D; this.fireStore.doc&lt;A&gt;(docRef.path) as AngularFirestoreDocument;  // TODO make sure this also copies the query
+          return { ...data, id, path, ref: docRef, docFs: _docFs, isExists };
+        } else if (actionIfNotExist &#x3D;&#x3D;&#x3D; DocNotExistAction.RETURN_NULL) { /* doc doesn&#x27;t exist */
+          return null;
+        }
+      }),
+      map((data) &#x3D;&gt; {
+        if (data !&#x3D; null) {
+          return convertTimestampToDate(data);
+        } else {
+          return data;
+        }
+      }),
+
+    ) as Observable&lt;A&gt;;
+
+    return this.handleRes$&lt;A&gt;(res$, &#x27;listenForDoc$&#x27;, {docFs});
+  }
+
+  // TODO make listentoTypes and addExtras a single attribute called options
+  protected listenForCollection$&lt;A extends FirestoreItem&gt;(collectionFs: AngularFirestoreCollection&lt;FirestoreItem&gt;,
+                                                          listenToTypes?: DocumentChangeType[]): Observable&lt;A[]&gt; {
+    /**
+     * Returns an observable that will emit whenever the ref changes in any way.
+     * Also adds the id and ref to the object.
+     */
+
+    if (listenToTypes &#x3D;&#x3D;&#x3D; undefined || listenToTypes &#x3D;&#x3D;&#x3D; null || listenToTypes.length &lt;&#x3D; 0) { listenToTypes &#x3D; [&#x27;added&#x27;, &#x27;removed&#x27;, &#x27;modified&#x27;]; }
+
+    const res$ &#x3D; collectionFs.snapshotChanges().pipe(
+
+      map((actions: DocumentChangeAction&lt;FirestoreItem&gt;[]) &#x3D;&gt; actions.filter(a &#x3D;&gt; {
+        return listenToTypes.includes(a.type);
+      })),
+      map((actions: DocumentChangeAction&lt;FirestoreItem&gt;[]) &#x3D;&gt; actions.map(a &#x3D;&gt; {
+        const data &#x3D; a.payload.doc.data() as A;
+
+        const id &#x3D; a.payload.doc.id;
+        const docRef &#x3D; a.payload.doc.ref;
+        const path &#x3D; docRef.path;
+        const _docFs &#x3D; this.ngFirestore.doc(path);
+        // const afDocRef &#x3D; this.fireStore.doc&lt;A&gt;(docRef.path) as AngularFirestoreDocument; // TODO make sure this also copies the query
+        return { ...data, id, path, ref: docRef, docFs: _docFs };
+
+      })),
+      map((datas: A[]) &#x3D;&gt; datas.map(data &#x3D;&gt; {
+        return convertTimestampToDate(data);
+      }))
+    ) as Observable&lt;A[]&gt;;
+
+    return this.handleRes$&lt;A[]&gt;(res$, &#x27;listenForCollection$&#x27;, {collectionFs, listenToTypes});
+  }
+
+
+  /**
+   * Wrapper for listenForDocDeepRecursiveHelper$ so that we can cast the return to the correct type
+   * All logic is in listenForDocDeepRecursiveHelper$.
+   *
+   * @link SubCollectionQuery
+   *
+   * E.x:
+   *      const subCollectionQueries: SubCollectionQuery[] &#x3D; [
+   *         { name: &#x27;data&#x27; },
+   *         { name: &#x27;secure&#x27; },
+   *         { name: &#x27;variants&#x27; },
+   *         { name: &#x27;images&#x27;,
+   *           queryFn: ref &#x3D;&gt; ref.orderBy(&#x27;index&#x27;),
+   *           collectionWithNames: [
+   *             { name: &#x27;secure&#x27;}
+   *           ]
+   *         },
+   *     ];
+   *
+   *     this.listenForDocAndSubCollections&lt;Product&gt;(docFs, collections)
+   *
+   * @param docFs - a docFs with potential queryFn
+   * @param subCollectionQueries - see example
+   */
+  protected listenForDocDeep$&lt;A extends FirestoreItem&gt;(docFs: AngularFirestoreDocument,
+                                                       subCollectionQueries: SubCollectionQuery[]): Observable&lt;A&gt; {
+
+    const res$ &#x3D; this.listenForDocDeepRecursiveHelper$(docFs, subCollectionQueries).pipe(
+      map(data &#x3D;&gt; data as A)
+    );
+
+    return this.handleRes$(res$, &#x27;listenForDocDeep$&#x27;, {docFs, subCollectionQueries}, null, &#x27;Failed To read doc&#x27;);
+  }
+
+  /**
+   * DO NOT CALL THIS METHOD, meant to be used solely by listenForDocAndSubCollections$
+   */
+  protected listenForDocDeepRecursiveHelper$&lt;A extends FirestoreItem&gt;(
+    docFs: AngularFirestoreDocument,
+    subCollectionQueries: SubCollectionQuery[],
+    actionIfNotExist: DocNotExistAction &#x3D; DocNotExistAction.RETURN_NULL): Observable&lt;FirestoreItem&gt; {
+
+    /* Listen for the docFs*/
+    return this.listenForDoc$(docFs, actionIfNotExist).pipe(
+      //
+      // catchError(err &#x3D;&gt; {
+      //   if (err &#x3D;&#x3D;&#x3D; &#x27;Document Does not exists&#x27;) { return of(null); } /* if a doc is deleted we just skip it */
+      //   else { throw err; }
+      // }),
+
+      filter(doc &#x3D;&gt; doc !&#x3D;&#x3D; null),
+
+      mergeMap((item: FirestoreItem) &#x3D;&gt; {
+
+        if (item &#x3D;&#x3D;&#x3D; null) { return of(item); }
+        if (subCollectionQueries.length &lt;&#x3D; 0) { return of(item); }
+
+        const collectionListeners: Array&lt;Observable&lt;any&gt;&gt; &#x3D; [];
+
+        /* Iterate over each sub collection we have given and create collection listeners*/
+        subCollectionQueries.forEach(subCollectionQuery &#x3D;&gt; {
+
+          // console.log(subCollectionQuery);
+
+          const collectionFs &#x3D; docFs.collection(subCollectionQuery.name, subCollectionQuery.queryFn);
+          // const collectionFs &#x3D; this.firestore.docFs(item.path).subCollectionQuery(subCollectionQuery.name, subCollectionQuery.queryFn);
+
+          const collectionListener &#x3D; this.listenForCollection$(collectionFs, null).pipe(
+            // tap(d &#x3D;&gt; console.log(d)),
+            // filter(docs &#x3D;&gt; docs.length &gt; 0), // skip empty collections or if the subCollectionQuery doesnt exist
+            /* Uncomment to see data on each update */
+            // tap(d &#x3D;&gt; console.log(d)),
+
+            /* Listen For and Add any Potential Sub Docs*/
+            mergeMap((docs: FirestoreItem[]) &#x3D;&gt; {
+              if (!subCollectionQuery.subCollectionQueries) { return of(docs); }
+
+              const docListeners: Array&lt;Observable&lt;any&gt;&gt; &#x3D; [];
+
+              docs.forEach(d &#x3D;&gt; {
+                const subDocFs &#x3D; this.ngFirestore.doc(d.path);
+                const subDocAndCollections$ &#x3D; this.listenForDocDeepRecursiveHelper$(subDocFs,
+                  subCollectionQuery.subCollectionQueries).pipe(
+                  // tap(subDoc &#x3D;&gt; console.log(subDoc)),
+                  // filter(subDoc &#x3D;&gt; subDoc !&#x3D;&#x3D; null),
+                  map((subDoc: FirestoreItem) &#x3D;&gt; {
+                    return {...d, ...subDoc } as FirestoreItem;
+                  }),
+                  // tap(val &#x3D;&gt; console.log(val))
+                );
+                docListeners.push(subDocAndCollections$);
+              });
+
+              // console.log(docListeners);
+
+              if (docListeners.length &lt;&#x3D; 0) { return of([]); } /* subCollectionQuery is empty or doesnt exist */
+
+              return combineLatest(docListeners).pipe(
+                // tap(val &#x3D;&gt; console.log(val))
+              );
+            }), /* End of Listening for sub docs */
+            // tap(val &#x3D;&gt; console.log(val)),
+
+            /* If docs.length &#x3D;&#x3D;&#x3D; 1 and the id is defaultDocId or the given docId it means we are in a sub subCollectionQuery
+            and we only care about the data. So we remove the array and just make it one object with the
+            subCollectionQuery name as key and docs[0] as value */
+            map((docs: FirestoreItem[]) &#x3D;&gt; {
+              const docId &#x3D; subCollectionQuery.docId !&#x3D;&#x3D; undefined ? subCollectionQuery.docId : this.defaultDocId;
+
+              if (docs.length &#x3D;&#x3D;&#x3D; 1 &amp;&amp; docs[0].id &#x3D;&#x3D;&#x3D; docId) { return {[subCollectionQuery.name]: docs[0]}; }
+              else { return {[subCollectionQuery.name]: docs}; }
+            }),
+            // tap(d &#x3D;&gt; console.log(d)),
+          );
+
+          collectionListeners.push(collectionListener);
+        });
+
+        /* Finally return the combined collection listeners*/
+        return combineLatest(collectionListeners).pipe(
+          map((datas: Array&lt;any&gt;) &#x3D;&gt; {
+            const datasMap &#x3D; {};
+
+            datas.forEach((collection) &#x3D;&gt; {
+
+              for (const [key, value] of Object.entries(collection)) {
+                datasMap[key] &#x3D; value;
+              }
+            });
+            return datasMap;
+          }),
+
+          map((data: DocumentData) &#x3D;&gt; {
+            return {...item, ...data};
+          }),
+          // tap(data &#x3D;&gt; console.log(data)),
+        );
+      })
+    );
+  }
+
+  protected listenForCollectionRecursively&lt;A extends FirestoreItem&gt;(path: string,
+                                                                    collectionKey: string,
+                                                                    orderKey?: string): Observable&lt;any&gt; {
+
+    /**
+     * Listens for collections inside collections with the same name to an unlimited depth and returns all of it as an array.
+     */
+    let ref;
+
+    if (orderKey !&#x3D; null) {
+      ref &#x3D; this.ngFirestore.collection(path, r &#x3D;&gt; r.orderBy(orderKey));
+    } else {
+      ref &#x3D; this.ngFirestore.collection(path);
+    }
+
+    return this.listenForCollection$&lt;A&gt;(ref, null).pipe(
+      mergeMap((items: A[]) &#x3D;&gt; {
+
+        if (items.length &lt;&#x3D; 0) { return of([]); } // TODO  perhaps make this throw an error so that we can skip it
+
+        // if (items.length &lt;&#x3D; 0) { throwError(&#x27;No more &#x27;); }
+
+        const nextLevelObs: Array&lt;Observable&lt;A&gt;&gt; &#x3D; [];
+
+        for (const item of items) {
+
+
+          const nextLevelPath &#x3D; this.ngFirestore.doc(item.path).collection(collectionKey).ref.path;  // one level deeper
+
+          const nextLevelItems$ &#x3D; this.listenForCollectionRecursively(nextLevelPath, collectionKey, orderKey).pipe(
+            map((nextLevelItems: A[]) &#x3D;&gt; {
+              if (nextLevelItems.length &gt; 0) { return {...item, [collectionKey]: nextLevelItems } as A; }
+              else {  return {...item} as A; }  // dont include an empty array
+            }),
+          );
+          nextLevelObs.push(nextLevelItems$);
+        }
+
+        return combineLatest(nextLevelObs).pipe(
+          tap(val &#x3D;&gt; console.log(val))
+        );
+      }),
+
+    );
+  }
+
+  /* ----------  ADD -------------- */
+
+  // protected addToBaseCollection$(data: T, id?: string): Observable&lt;T&gt; {
+  //   return this.add$&lt;T&gt;(data, this.baseCollectionFs, id);
+  // }
+
+  protected add$&lt;A&gt;(data: A, collectionFs: AngularFirestoreCollection, id?: string): Observable&lt;A&gt; {
+    return of(null).pipe(
+      mergeMap(() &#x3D;&gt; {
+        let res$: Observable&lt;any&gt;;
+
+        data &#x3D; addCreatedDate(data);
+        data &#x3D; addModifiedDate(data);
+
+        if (id !&#x3D;&#x3D; undefined) { res$ &#x3D; from(collectionFs.doc(id).set(data)); }
+        else { res$ &#x3D; from(collectionFs.add(data)); }
+
+        res$ &#x3D; res$.pipe(
+          // tap(() &#x3D;&gt; this.snackBar.open(&#x27;Success&#x27;, &#x27;Added&#x27;, {duration: 1000})),
+          tap(ref &#x3D;&gt; console.log(ref)),
+          tap(() &#x3D;&gt; console.log(data)),
+          map((ref: DocumentReference) &#x3D;&gt; {
+            if (id &#x3D;&#x3D;&#x3D; undefined) {
+              return {...data, id: ref.id, path: ref.path, ref, docFs: this.ngFirestore.doc(ref.path) };
+            } else {
+              const path &#x3D; collectionFs.ref.path + &#x27;/&#x27; + id;
+              return {...data, id, path, docFs: this.ngFirestore.doc(path) };
+            }
+          }),
+        );
+
+        return this.handleRes$(res$, &#x27;add$&#x27;, {data, collectionFs, id}, &#x27;Document Added Successfully&#x27;, &#x27;Document failed to add&#x27;).pipe(
+          take(1) /* No need to unsub */
+        );
+      })
+    );
+  }
+
+  protected addDeep$&lt;A extends FirestoreItem&gt;(data: A,
+                                              collectionFs: AngularFirestoreCollection,
+                                              subCollectionWriters?: SubCollectionWriter[],
+                                              docId?: string): Observable&lt;A&gt; {
+
+    const split &#x3D; this.splitDataIntoCurrentDocAndSubCollections(data, subCollectionWriters);
+    const currentDoc &#x3D; split.currentDoc;
+    const subCollections &#x3D; split.subCollections;
+
+    // console.log(currentDoc, subCollections);
+
+    // console.log(Object.entries(subCollections).keys(), Object.entries(subCollections).values());
+
+    const res$ &#x3D; this.add$&lt;A&gt;(currentDoc as A, collectionFs, docId).pipe(
+      // tap(val &#x3D;&gt; console.log(val)),
+
+      /* Add Sub/sub collections*/
+      mergeMap((currentData: A) &#x3D;&gt; {
+
+        const subWriters: Array&lt;Observable&lt;any&gt;&gt; &#x3D; [];
+
+        for (const [subCollectionKey, subCollectionValue] of Object.entries(subCollections)) {
+          let subSubCollectionWriters: SubCollectionWriter[]; // undefined in no subCollectionWriters
+          let subDocId: string;
+
+          if (subCollectionWriters) {
+            subSubCollectionWriters &#x3D; subCollectionWriters.find(subColl &#x3D;&gt; subColl.name &#x3D;&#x3D;&#x3D; subCollectionKey).subCollectionWriters;
+            subDocId &#x3D; subCollectionWriters.find(subColl &#x3D;&gt; subColl.name &#x3D;&#x3D;&#x3D; subCollectionKey).docId;
+          }
+
+          const subCollectionFs &#x3D; this.ngFirestore.doc(currentData.path).collection(subCollectionKey);
+
+          /* Handle array and object differently
+          * For example if array and no docId is given it means we should save each entry as a separate doc.
+          * If a docId is given should save it using that docId under a single doc.
+          * If not an array it will always be saved as a single doc, using this.defaultDocId as the default docId if none is given */
+          if (Array.isArray(subCollectionValue)) {
+            if (subDocId !&#x3D;&#x3D; undefined) { /* not undefined so save it as a single doc under that docId */
+
+              /* the pipe only matters for the return subCollectionValue not for writing the data */
+              const subWriter &#x3D; this.addDeep$(subCollectionValue as FirestoreItem, subCollectionFs, subSubCollectionWriters, subDocId).pipe(
+                map(item &#x3D;&gt; {
+                  // return {[key]: item};
+                  return {key: subCollectionKey, value: item}; /* key and subCollectionValue as separate k,v properties */
+                })
+              );
+              subWriters.push(subWriter);
+
+            } else { /* docId is undefined so we save each object in the array separate */
+              subCollectionValue.forEach((arrayValue: FirestoreItem) &#x3D;&gt; {
+
+                /* the pipe only matters for the return subCollectionValue not for writing the data */
+                const subWriter &#x3D; this.addDeep$(arrayValue, subCollectionFs, subSubCollectionWriters).pipe(
+                  map(item &#x3D;&gt; {
+                    // return {[key]: [item]};
+                    /* key and subCollectionValue as separate k,v properties -- subCollectionValue in an array */
+                    return {key: subCollectionKey, value: [item]};
+                  })
+                );
+
+                subWriters.push(subWriter);
+              });
+            }
+          } else { /* Not an array so a single Object*/
+            subDocId &#x3D; subDocId !&#x3D;&#x3D; undefined ? subDocId : this.defaultDocId;
+
+            /* the pipe only matters for the return subCollectionValue not for writing the data */
+            const subWriter &#x3D; this.addDeep$(subCollectionValue, subCollectionFs, subSubCollectionWriters, subDocId).pipe(
+              map(item &#x3D;&gt; {
+                // return {[key]: item};
+                return {key: subCollectionKey, value: item}; /* key and subCollectionValue as separate k,v properties */
+              })
+            );
+
+            subWriters.push(subWriter);
+          }
+        } /* end of iteration */
+
+        if (subWriters.length &gt; 0) { /* if subWriters.length &gt; 0 it means we need to handle the subwriters */
+
+          /* the pipe only matters for the return value not for writing the data */
+          return combineLatest(subWriters).pipe(
+            // tap(sub &#x3D;&gt; console.log(sub)),
+
+            // TODO super duper ugly way of joining the data together but I cannot think of a better way..also it doesnt really matter.
+            // TODO The ugliness only relates to how the return object looks after we add, it has no effect on how the object is saved on
+            // TODO firestore.
+
+            map((docDatas: Array&lt;Map&lt;string, []&gt;&gt;) &#x3D;&gt; { /* List of sub docs*/
+              const groupedData &#x3D; {};
+
+              docDatas.forEach((doc: {[index: string]: any}) &#x3D;&gt; { /* iterate over each doc */
+
+                const key &#x3D; doc.key;
+                const value &#x3D; doc.value;
+
+                /* if groupedData has the key already it means that the several docs have the same key..so an array */
+                if (groupedData.hasOwnProperty(key) &amp;&amp; Array.isArray(groupedData[key])) {
+                  /* groupedData[key] must be an array since it already exist..add this doc.value to the array */
+                  (groupedData[key] as Array&lt;any&gt;).push(value[0]);
+                } else {
+                  groupedData[key] &#x3D; value;
+                }
+              });
+
+              return groupedData as object;
+            }),
+
+            // tap(groupedData &#x3D;&gt; console.log(groupedData)),
+
+            map((groupedData: A) &#x3D;&gt; {
+              return {...currentData, ...groupedData } as A;
+            }),
+            // tap(d &#x3D;&gt; console.log(d)),
+          );
+        } else {
+          return of(currentData);
+        }
+      })
+    );
+
+    return this.handleRes$(res$, &#x27;addDeep$&#x27;, {data, collectionFs, subCollectionWriters, docId}, &#x27;Document Added Successfully&#x27;, &#x27;Document failed to add&#x27;).pipe(
+      // tap(d &#x3D;&gt; console.log(d)),
+      take(1) /* just to make sure it only emits once */
+    );
+  }
+
+
+  /* ----------  EDIT -------------- */
+
+  /**
+   * Goes through each level and removes DbItemExtras
+   * In case you wish to save the data
+   */
+  protected cleanExtrasFromData&lt;A extends FirestoreItem&gt;(data: A, subCollectionWriters: SubCollectionWriter[]): A {
+
+    // const dataToBeCleaned &#x3D; cloneDeep(data); /* clone data so we dont modify the original */
+    const dataToBeCleaned &#x3D; data;
+    return this.removeDataExtrasRecursiveHelper(dataToBeCleaned, subCollectionWriters) as A;
+  }
+
+  protected removeDataExtrasRecursiveHelper&lt;A extends FirestoreItem&gt;(dbItem: A, subCollectionWriters: SubCollectionWriter[]): A {
+
+    // tslint:disable-next-line:no-console
+    console.time(&#x27;removeDataExtrasRecursiveHelper&#x27;);
+
+    // const extraPropertyNames: string[] &#x3D; Object.getOwnPropertyNames(new DbItemExtras());
+    const extraPropertyNames: string[] &#x3D; [&#x27;id&#x27;, &#x27;path&#x27;, &#x27;ref&#x27;, &#x27;docFs&#x27;, &#x27;isExists&#x27;];
+
+    /* Current level delete */
+    for (const extraPropertyName of extraPropertyNames) {
+      delete dbItem[extraPropertyName];
+    }
+
+    subCollectionWriters.forEach(col &#x3D;&gt; {
+      if (Array.isArray(dbItem[col.name])) { /* property is array so will contain multiple docs */
+
+        const docs: FirestoreItem[] &#x3D; dbItem[col.name];
+        docs.forEach(d &#x3D;&gt; {
+
+          if (col.subCollectionWriters) {
+            this.removeDataExtrasRecursiveHelper(d, col.subCollectionWriters);
+          } else {
+            /*  */
+            for (const extraPropertyName of extraPropertyNames) {
+              delete dbItem[col.name][extraPropertyName];
+            }
+          }
+        });
+
+      } else { /* not an array so a single doc*/
+
+        if (col.subCollectionWriters) {
+          this.removeDataExtrasRecursiveHelper(dbItem[col.name], col.subCollectionWriters);
+        } else {
+          for (const extraPropertyName of extraPropertyNames) {
+            delete dbItem[col.name][extraPropertyName];
+          }
+        }
+
+      }
+    });
+
+    // tslint:disable-next-line:no-console
+    console.timeEnd(&#x27;removeDataExtrasRecursiveHelper&#x27;);
+
+    return dbItem;
+
+  }
+
+  /**
+   * Firestore doesn&#x27;t allow you do change the name or move a doc directly so you will have to create a new doc under the new name
+   * and then delete the old doc.
+   * returns the new doc once the delete is done.
+   */
+  protected changeDocName$&lt;A extends FirestoreItem&gt;(docFs: AngularFirestoreDocument,
+                                                    subCollectionQueries: SubCollectionQuery[],
+                                                    subCollectionWriters: SubCollectionWriter[],
+                                                    newName: string): Observable&lt;any&gt; {
+
+    const collectionFs: AngularFirestoreCollection &#x3D; this.ngFirestore.collection(docFs.ref.parent);
+
+
+    const res$ &#x3D; this.listenForDocDeep$(docFs, subCollectionQueries).pipe(
+      take(1),
+      tap(data &#x3D;&gt; console.log(data)),
+      map((oldData: A) &#x3D;&gt; this.removeDataExtrasRecursiveHelper(oldData, subCollectionWriters)),
+      tap(data &#x3D;&gt; console.log(data)),
+      mergeMap((oldData: A) &#x3D;&gt; {
+
+        return this.addDeep$(oldData, collectionFs, subCollectionWriters, newName).pipe( /* add the data under newName*/
+          // mergeMap(newData &#x3D;&gt; { /* delete the old doc */
+          //   return this.deleteDeep$(docFs, subCollectionQueries).pipe(
+          //     mapTo(newData) /* keep the new data */
+          //   );
+          // }),
+          // mergeMap(newData &#x3D;&gt; {
+          //   const newDocFs &#x3D; this.ngFirestore.doc(newData.path);
+          //   return this.listenForDocDeep$&lt;A&gt;(newDocFs, subCollectionQueries);  /* switch to listening to the new doc*/
+          // }),
+        );
+      }),
+      catchError(err &#x3D;&gt; {
+        console.log(&#x27;Failed to Change Doc Name: &#x27; + err);
+        throw err;
+      })
+    );
+
+    return this.handleRes$(res$,
+      &#x27;changeDocName$&#x27;,
+      {docFs, subCollectionQueries, subCollectionWriters, newName},
+      &#x27;Failed to Change Doc Name&#x27;
+    );
+  }
+
+  protected update$&lt;A&gt;(data: A, docFs: AngularFirestoreDocument): Observable&lt;boolean&gt; {
+    /**
+     * transforms the promise to an observable
+     */
+    return of(null).pipe(
+      mergeMap(() &#x3D;&gt; {
+        let res$: Observable&lt;any&gt;;
+
+        data &#x3D; addModifiedDate(data);
+
+        res$ &#x3D; from(docFs.update(data));
+
+        return this.handleRes$(res$, &#x27;update$&#x27;, {data, docFs}, &#x27;Updated&#x27;, &#x27;Failed to Update Document&#x27;).pipe(
+          // take(1) /* no need to unsub */
+        );
+      }),
+      take(1) /* just to make sure it only emits once */
+    );
+  }
+
+  /**
+   * Be careful when updating a document of any kind since we allow partial data there cannot be any type checking prior to update
+   * so its possible to introduce spelling mistakes on attributes and so forth
+   */
+  protected updateDeep$&lt;A&gt;(data: A,
+                           docFs: AngularFirestoreDocument,
+                           subCollectionWriters: SubCollectionWriter[]): Observable&lt;any&gt; {
+
+    const batch &#x3D; this.updateDeepToBatchHelper(data, docFs, subCollectionWriters);
+
+    const res$ &#x3D; this.batchCommit(batch);
+
+    return this.handleRes$(res$, &#x27;updateDeep$&#x27;, {data, docFs, subCollectionWriters}, &#x27;Updated&#x27;, &#x27;Failed to Update Document&#x27;).pipe(
+      take(1) /* no need to unsub */
+    );
+  }
+
+  /**
+   * DO NOT CALL THIS METHOD, used by update deep
+   */
+  protected updateDeepToBatchHelper&lt;A&gt;(data: A,
+                                       docFs: AngularFirestoreDocument,
+                                       subCollectionWriters: SubCollectionWriter[],
+                                       batch?: WriteBatch): WriteBatch {
+
+    if (batch &#x3D;&#x3D;&#x3D; undefined) { batch &#x3D; this.ngFirestore.firestore.batch(); }
+
+    const split &#x3D; this.splitDataIntoCurrentDocAndSubCollections(data, subCollectionWriters);
+    const currentDoc &#x3D; split.currentDoc;
+    const subCollections &#x3D; split.subCollections;
+
+    // console.log(currentDoc, subCollections);
+
+    batch.update(docFs.ref, currentDoc);
+
+    for (const [subCollectionKey, subDocUpdateValue] of Object.entries(subCollections)) {
+
+      let subSubCollectionWriters: SubCollectionWriter[]; // undefined in no subCollectionWriters
+      let subDocId: string;
+
+      if (subCollectionWriters) {
+        subSubCollectionWriters &#x3D; subCollectionWriters.find(subColl &#x3D;&gt; subColl.name &#x3D;&#x3D;&#x3D; subCollectionKey).subCollectionWriters;
+        subDocId &#x3D; subCollectionWriters.find(subColl &#x3D;&gt; subColl.name &#x3D;&#x3D;&#x3D; subCollectionKey).docId;
+      }
+
+      subDocId &#x3D; subDocId !&#x3D;&#x3D; undefined ? subDocId : this.defaultDocId; /* Set default if none given */
+
+      const subDocFs &#x3D; docFs.collection(subCollectionKey).doc(subDocId);
+
+      batch &#x3D; this.updateDeepToBatchHelper(subDocUpdateValue, subDocFs, subSubCollectionWriters, batch);
+    }
+
+    return batch;
+  }
+
+
+  protected updateDocByPath$&lt;A&gt;(path: string, data: A): Observable&lt;any&gt; {
+    const doc &#x3D; this.ngFirestore.doc(path);
+    return this.update$(data, doc);
+  }
+
+  protected deleteDocByPath(path: string): Observable&lt;any&gt; {
+    const doc &#x3D; this.ngFirestore.doc(path);
+    return this.delete$(doc);
+  }
+
+  protected updateMultiple$&lt;A&gt;(docs: AngularFirestoreDocument[], data: A): Observable&lt;any&gt; {
+    const batch &#x3D; this.ngFirestore.firestore.batch();
+
+
+    docs.forEach((doc) &#x3D;&gt; {
+      batch.update(doc.ref, data);
+    });
+
+    return this.batchCommit(batch);
+  }
+
+  protected updateMultipleByPaths$&lt;A&gt;(paths: string[], data: A): Observable&lt;any&gt; {
+    const docsFs: AngularFirestoreDocument[] &#x3D; [];
+
+    paths.forEach(path &#x3D;&gt; {
+      docsFs.push(this.ngFirestore.doc(path));
+    });
+
+    return this.updateMultiple$&lt;A&gt;(docsFs, data);
+  }
+
+  /* Move Item in Array */
+
+  protected moveItemInArray$&lt;A extends DbItemFullWithIndex&gt;(array: A[], fromIndex: number, toIndex: number): Observable&lt;any&gt; {
+    console.log(fromIndex, toIndex);
+
+    if (fromIndex &#x3D;&#x3D; null || toIndex &#x3D;&#x3D; null || fromIndex &#x3D;&#x3D;&#x3D; toIndex || array.length &lt;&#x3D; 0) { // we didnt really move anything
+      return of(null);
+    }
+
+    const batch &#x3D; this.getBatchFromMoveItemInIndexedDocs(array as DbItemFullWithIndex[], fromIndex, toIndex);
+
+    return this.batchCommit(batch);
+  }
+
+  protected getBatchFromMoveItemInIndexedDocs&lt;A extends DbItemFullWithIndex&gt;(array: Array&lt;A&gt;,
+                                                                             fromIndex: number,
+                                                                             toIndex: number,
+                                                                             useCopy &#x3D; false): firebase.firestore.WriteBatch {
+    /**
+     * Moved item within the same list so we need to update the index of all items in the list;
+     * Use a copy if you dont wish to update the given array, for example when you watch to just listen for the change of the db..
+     * The reason to not do this is because it takes some time for the db to update and it looks better if the list updates immediately.
+     */
+
+    const lowestIndex &#x3D; Math.min(fromIndex, toIndex);
+    const batch &#x3D; this.ngFirestore.firestore.batch();
+
+    if (fromIndex &#x3D;&#x3D; null || toIndex &#x3D;&#x3D; null || fromIndex &#x3D;&#x3D;&#x3D; toIndex) { // we didnt really move anything
+      return batch;
+    }
+
+    let usedArray: Array&lt;A&gt;;
+
+    if (useCopy) {
+      usedArray &#x3D; Object.assign([], array);
+    } else {
+      usedArray &#x3D; array;
+    }
+
+    // console.log(usedArray, array);
+
+    moveItemInArray(usedArray, fromIndex, toIndex);
+
+    const listSliceToUpdate: A[] &#x3D; usedArray.slice(lowestIndex);
+
+    let i &#x3D; lowestIndex;
+    for (const item of listSliceToUpdate) {
+      const ref &#x3D; getRefFromPath(item.path) as DocumentReference;
+      batch.update(ref, {index: i});
+      i++;
+    }
+
+    return batch;
+  }
+
+  protected getBatchFromTransferItemInIndexedDocs&lt;A extends DbItemFullWithIndex&gt;(previousArray: A[],
+                                                                                 currentArray: A[],
+                                                                                 previousIndex: number,
+                                                                                 currentIndex: number,
+                                                                                 additionalDataUpdateOnMovedItem?: {[key: string]: any},
+                                                                                 useCopy &#x3D; false): firebase.firestore.WriteBatch {
+
+    /**
+     * Used mainly for drag and drop scenarios where we drag an item from one array to another and the the docs have an index attribute.
+     */
+
+    const batch &#x3D; this.ngFirestore.firestore.batch();
+
+    let usedPreviousArray: Array&lt;A&gt;;
+    let usedCurrentArray: Array&lt;A&gt;;
+    if (useCopy) {
+      usedPreviousArray &#x3D; Object.assign([], previousArray);
+      usedCurrentArray &#x3D; Object.assign([], currentArray);
+    } else {
+      usedPreviousArray &#x3D; previousArray;
+      usedCurrentArray &#x3D; currentArray;
+    }
+
+    transferArrayItem(usedPreviousArray, usedCurrentArray, previousIndex, currentIndex);
+
+    if (additionalDataUpdateOnMovedItem !&#x3D;&#x3D; undefined) {
+      const movedItem &#x3D; currentArray[currentIndex];
+      const movedPartRef &#x3D; getRefFromPath(movedItem.path) as DocumentReference;
+      batch.update(movedPartRef, additionalDataUpdateOnMovedItem);
+    }
+
+    const currentArraySliceToUpdate: A[] &#x3D; usedCurrentArray.slice(currentIndex);
+    let i &#x3D; currentIndex;
+    for (const item of currentArraySliceToUpdate) {
+      const ref &#x3D; getRefFromPath(item.path) as DocumentReference;
+      batch.update(ref, {index: i});
+      i++;
+    }
+
+    const prevArraySliceToUpdate: A[] &#x3D; usedPreviousArray.slice(previousIndex);
+    i &#x3D; previousIndex;
+    for (const item of prevArraySliceToUpdate) {
+      const ref &#x3D; getRefFromPath(item.path) as DocumentReference;
+      batch.update(ref, {index: i});
+      i++;
+    }
+
+    return batch;
+  }
+
+  protected getBatchFromDeleteItemInIndexedDocs&lt;A extends DbItemFullWithIndex&gt;(array: A[]): firebase.firestore.WriteBatch {
+
+    /**
+     * Run this on collections with a fixed order using an index: number attribute;
+     * This will update that index with the index in the collectionData, so it should be sorted by index first.
+     * Basically needs to be run after a delete
+     */
+
+    const batch &#x3D; this.ngFirestore.firestore.batch();
+
+    array.forEach((item, index) &#x3D;&gt; {
+      if (item.index !&#x3D;&#x3D; index) {
+        const ref &#x3D; getRefFromPath(item.path) as DocumentReference;
+        batch.update(ref, {index});
+      }
+    });
+
+    return batch;
+  }
+
+  protected updateIndexAfterDeleteInIndexedDocs&lt;A extends DbItemFullWithIndex&gt;(array: A[]): Observable&lt;any&gt; {
+    const batch &#x3D; this.getBatchFromDeleteItemInIndexedDocs(array);
+    return this.batchCommit(batch);
+  }
+
+  /* ----------  DELETE -------------- */
+
+  protected delete$(docFs: AngularFirestoreDocument): Observable&lt;any&gt; {
+
+    return of(null).pipe(
+      mergeMap(() &#x3D;&gt; {
+        let res$: Observable&lt;any&gt;;
+        res$ &#x3D; from(docFs.delete());
+
+        return this.handleRes$(res$, &#x27;delete$&#x27;, {docFs}, &#x27;Deleted&#x27;, &#x27;Failed to Delete Document&#x27;).pipe(
+          take(1) /* no need to unsub*/
+        );
+      }),
+      take(1)
+    );
+  }
+
+  protected deleteMultiple$(docsFs: AngularFirestoreDocument[]): Observable&lt;any&gt; {
+    const batch &#x3D; this.ngFirestore.firestore.batch();
+
+    docsFs.forEach((doc) &#x3D;&gt; {
+      batch.delete(doc.ref);
+    });
+
+    const res$ &#x3D; this.batchCommit(batch);
+
+    return this.handleRes$(res$, &#x27;deleteMultiple$&#x27;, docsFs.map(doc &#x3D;&gt; doc.ref.path), &#x27;Deleted&#x27;, &#x27;Failed to Delete Multiple&#x27;);
+  }
+
+  protected deleteMultipleByPaths$(paths: string[]): Observable&lt;any&gt; {
+    const docsFs: AngularFirestoreDocument[] &#x3D; [];
+
+    paths.forEach(path &#x3D;&gt; {
+      docsFs.push(this.ngFirestore.doc(path));
+    });
+
+    return this.deleteMultiple$(docsFs);
+  }
+
+  protected deleteMultipleDeep$(docsFs: AngularFirestoreDocument[], subCollectionQueries: SubCollectionQuery[]): Observable&lt;any&gt; {
+
+    const mainDocLists$: Array&lt;Observable&lt;any&gt;&gt; &#x3D; [];
+
+    docsFs.forEach(doc &#x3D;&gt; {
+      const docList$ &#x3D; this.getFirestoreDocumentsDeep$(doc, subCollectionQueries);
+      mainDocLists$.push(docList$);
+    });
+
+    return combineLatest(mainDocLists$).pipe(
+      // tap(lists &#x3D;&gt; console.log(lists)),
+      map((lists: [any]) &#x3D;&gt; {
+        let mainDocFsList: AngularFirestoreDocument[] &#x3D; [];
+        lists.forEach(list &#x3D;&gt; {
+          mainDocFsList &#x3D; mainDocFsList.concat(list);
+        });
+        return mainDocFsList;
+      }),
+      // tap(lists &#x3D;&gt; console.log(lists)),
+      switchMap((docFsList: AngularFirestoreDocument[]) &#x3D;&gt; this.deleteMultiple$(docFsList)),
+      catchError((err) &#x3D;&gt; { // TODO super ugly and I dont know why this error is thrown..still works
+        if (err &#x3D;&#x3D;&#x3D; &#x27;Document Does not exists&#x27;) { return of(null); }
+        else { throw err; }
+      })
+    );
+  }
+
+  protected deleteDeep$(docFs: AngularFirestoreDocument, subCollectionQueries: SubCollectionQuery[]): Observable&lt;any&gt; {
+
+    console.log(&#x27;deleteDeep&#x27;);
+    const res$ &#x3D; this.getFirestoreDocumentsDeep$(docFs, subCollectionQueries).pipe(
+      switchMap((docList: AngularFirestoreDocument&lt;DocumentData&gt;[]) &#x3D;&gt; this.deleteMultiple$(docList)),
+      catchError((err) &#x3D;&gt; { // TODO super ugly and I dont know why this error is thrown..still works
+        if (err &#x3D;&#x3D;&#x3D; &#x27;Document Does not exists&#x27;) { return of(null); }
+        else { throw err; }
+      }),
+      take(1)
+    );
+
+    return this.handleRes$(res$, &#x27;deleteDeep$&#x27;, {docFs, subCollectionQueries}, &#x27;Deleted&#x27;, &#x27;Failed to Delete&#x27;);
+  }
+
+  protected deleteDeepByItem$(item: FirestoreItem, subCollectionQueries: SubCollectionQuery[]): Observable&lt;any&gt; {
+
+    console.log(&#x27;deleteDeepByItem$&#x27;);
+
+    const docsFs &#x3D; this.getFirestoreDocumentsFromDbItem(item, subCollectionQueries);
+
+    const res$ &#x3D; this.deleteMultiple$(docsFs).pipe(
+      catchError((err) &#x3D;&gt; { // TODO super ugly and I dont know why this error is thrown..still works
+        if (err &#x3D;&#x3D;&#x3D; &#x27;Document Does not exists&#x27;) { return of(null); }
+        else { throw err; }
+      }),
+      take(1)
+    );
+
+    return this.handleRes$(res$,
+      &#x27;deleteDeepByItem$&#x27;,
+      {item, subCollectionQueries},
+      &#x27;Deleted&#x27;,
+      &#x27;Failed to Delete&#x27;
+    );
+  }
+
+  /* ----------  OTHER -------------- */
+
+
+
+  /**
+   * Returns an Observable containing a list of AngularFirestoreDocument found under the given docFs using the SubCollectionQuery[]
+   * Mainly used to delete a docFs and its sub docs
+   * @param docFs: AngularFirestoreDocument
+   * @param subCollectionQueries: SubCollectionQuery[]
+   */
+  private getFirestoreDocumentsDeep$&lt;A extends FirestoreItem&gt;(docFs: AngularFirestoreDocument,
+                                                              subCollectionQueries: SubCollectionQuery[]):
+    Observable&lt;AngularFirestoreDocument[]&gt; {
+
+    return this.listenForDocDeep$(docFs, subCollectionQueries).pipe(
+      map(item &#x3D;&gt; this.getPathsFromDbItemDeepRecursiveHelper(item, subCollectionQueries)),
+      // tap(pathList &#x3D;&gt; console.log(pathList)),
+      map((pathList: A) &#x3D;&gt; {
+        const docFsList: AngularFirestoreDocument[] &#x3D; [];
+        pathList.forEach(path &#x3D;&gt; docFsList.push(this.ngFirestore.doc(path)));
+        return docFsList;
+      }),
+      // tap(item &#x3D;&gt; console.log(item)),
+    );
+  }
+
+  private getFirestoreDocumentsFromDbItem&lt;A extends FirestoreItem&gt;(dbItem: FirestoreItem,
+                                                                   subCollectionQueries: SubCollectionQuery[]): AngularFirestoreDocument[] {
+
+    const pathList &#x3D; this.getPathsFromDbItemDeepRecursiveHelper(dbItem, subCollectionQueries);
+
+    const docFsList: AngularFirestoreDocument[] &#x3D; [];
+    pathList.forEach(path &#x3D;&gt; docFsList.push(this.ngFirestore.doc(path)));
+    return docFsList;
+  }
+
+  /**
+   * DO NOT CALL THIS METHOD, its meant as a support method for getDocs$
+   */
+  private getPathsFromDbItemDeepRecursiveHelper&lt;A extends FirestoreItem&gt;(dbItem: FirestoreItem,
+                                                                         subCollectionQueries: SubCollectionQuery[]): string[] {
+
+    // console.log(dbItem, subCollectionQueries);
+
+    let pathList: string[] &#x3D; [];
+    pathList.push(dbItem.path);
+
+    subCollectionQueries.forEach(col &#x3D;&gt; {
+      if (Array.isArray(dbItem[col.name])) { /* property is array so will contain multiple docs */
+
+        const docs: FirestoreItem[] &#x3D; dbItem[col.name];
+        docs.forEach(d &#x3D;&gt; {
+
+          if (col.subCollectionQueries) {
+            pathList &#x3D; pathList.concat(this.getPathsFromDbItemDeepRecursiveHelper(d, col.subCollectionQueries));
+          } else {
+            pathList.push(d.path);
+          }
+        });
+
+      } else { /* not an array so a single doc*/
+
+        if (col.subCollectionQueries) {
+          pathList &#x3D; pathList.concat(this.getPathsFromDbItemDeepRecursiveHelper(dbItem, col.subCollectionQueries));
+        } else {
+          const item &#x3D; (dbItem[col.name] as FirestoreItem);
+          if (item !&#x3D; null &amp;&amp; &#x27;path&#x27; in item) {
+            pathList.push(item.path);
+          }
+          // const path &#x3D; (dbItem[col.name] as FirestoreItem).path;
+        }
+
+      }
+    });
+
+    // console.log(pathList);
+
+    return pathList;
+  }
+
+  /**
+   * DO  NOT  CALL THIS METHOD, used in addDeep and updateDeep to split the data into currentDoc and subCollections
+   * Onyl goes one sub level deep;
+   */
+  private splitDataIntoCurrentDocAndSubCollections&lt;A extends FirestoreItem&gt;(
+    data: A,
+    subCollectionWriters?: SubCollectionWriter[]): CurrentDocSubCollectionSplit {
+
+    /* Split data into current doc and sub collections */
+    let currentDoc: { [index: string]: any; } &#x3D; {};
+    const subCollections: { [index: string]: any; }  &#x3D; {};
+
+    /* Check if the key is in subcollections, if not place it in currentDoc, else subCollections*/
+    for (const [key, value] of Object.entries(data)) {
+      // console.log(key, value);
+      if (subCollectionWriters) {
+        const subCollectionWriter: SubCollectionWriter &#x3D; subCollectionWriters.find(subColl &#x3D;&gt; subColl.name &#x3D;&#x3D;&#x3D; key);
+
+        if (subCollectionWriter) {
+          subCollections[key] &#x3D; value;
+        } else {
+          currentDoc[key] &#x3D; value;
+        }
+      }
+      else {
+        currentDoc &#x3D; data;
+      }
+    }
+
+    return {
+      currentDoc,
+      subCollections
+    } as CurrentDocSubCollectionSplit;
+  }
+
+
+
+  /**
+   * Turn a batch into an Observable instead of Promise.
+   */
+  protected batchCommit(batch: firebase.firestore.WriteBatch): Observable&lt;any&gt; {
+    return of(null).pipe(
+      mergeMap(() &#x3D;&gt; {
+        let res$: Observable&lt;any&gt;;
+        res$ &#x3D; from(batch.commit());
+
+        return this.handleRes$(res$, &#x27;batchCommit&#x27;, {batch}, &#x27;Updated&#x27;,
+                  &#x27;Failed to Update Documents&#x27;).pipe(
+          // take(1) /* no need to unsub*/
+        );
+      }),
+      take(1)
+    );
+  }
+
+  protected handleRes$&lt;A&gt;(result$: Observable&lt;A&gt;, name: string, data: {[key: string]: any}, successMessage?: string, errorMessage?: string):
+    Observable&lt;A&gt; {
+    return result$.pipe(
+      // tap(val &#x3D;&gt; console.log(val)),
+      tap(() &#x3D;&gt; {
+        // if (successMessage !&#x3D; null) { (this.snackBar.open(&#x27;Success&#x27;, successMessage, {duration: 1000})); }
+      }),
+      // map(() &#x3D;&gt; true),
+      catchError((err: FirestoreError) &#x3D;&gt; {
+        console.error(name, data, err);
+        // if (errorMessage !&#x3D; null) { this.snackBar.open(&#x27;Error&#x27;, errorMessage + &#x27;-&#x27; +  err.code, {duration: 1000}); }
+        throw err;
+      }),
+
+    );
+  }
+
+
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'AngularFirestoreWrapper.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
