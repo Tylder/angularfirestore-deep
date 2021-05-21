@@ -4,15 +4,16 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
+    "site": "angularfirestore-deep",
     "public": "./dist",
     "rewrites": [
       {
-        "source": "/demo",
-        "destination": "/demo/index.html"
+        "source": "**",
+        "destination": "/demo/**"
       },
       {
-        "source": "/docs",
-        "destination": "/docs/index.html"
+        "source": "/docs/**",
+        "destination": "/docs/**"
       }
     ],
     "ignore": [

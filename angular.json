@@ -70,7 +70,9 @@
             "styles": [
               "projects/demo/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "baseHref": "/demo/",
+            "deployUrl": "/demo/"
           },
           "configurations": {
             "production": {

@@ -17,7 +17,7 @@ It can also be more difficult to figure out how to store your data in a way that
 AngularFireStore-Deep is meant to help developers solve these issues.
 
 ### Documentation and Examples
-[Documentation](https://angularfire-wrappers-demo.web.app/docs/)
+[Documentation](https://angularfirestore-deep.web.app/docs/)
 
 
 ### Demo
@@ -25,8 +25,12 @@ You can find a simple demo in projects/demo.
 
 It can be run locally if you provide your own firebaseConfig in the environment file or you can find a running demo here: 
 
-[Demo](https://angularfire-wrappers-demo.web.app/demo/) 
+[Demo](https://angularfirestore-deep.web.app/demo/) 
 
+
+### Github
+
+[Github](https://github.com/Tylder/angularfirestore-deep/tree/master/projects/angularfirestore-deep) 
 
 ## Using the library
 

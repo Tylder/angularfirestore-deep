@@ -1,4 +1,13 @@
 {
+  "targets": {
+    "angularfire-wrappers-demo": {
+      "hosting": {
+        "demo": [
+          "angularfire-wrappers-demo"
+        ]
+      }
+    }
+  },
   "projects": {
     "default": "angularfire-wrappers-demo"
   }

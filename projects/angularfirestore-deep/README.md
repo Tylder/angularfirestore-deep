@@ -17,7 +17,7 @@ It can also be more difficult to figure out how to store your data in a way that
 AngularFireStore-Deep is meant to help developers solve these issues.
 
 ### Documentation and Examples
-[Documentation]()
+[Documentation](https://angularfirestore-deep.web.app/docs/)
 
 
 ### Demo
@@ -25,53 +25,23 @@ You can find a simple demo in projects/demo.
 
 It can be run locally if you provide your own firebaseConfig in the environment file or you can find a running demo here: 
 
-[Demo]() 
+[Demo](https://angularfirestore-deep.web.app/demo/) 
 
+
+### Github
+
+[Github](https://github.com/Tylder/angularfirestore-deep/tree/master/projects/angularfirestore-deep) 
 
 ## Using the library
 
-Import the library in any Angular application by running:
+Use the library in any Angular application:
 
-```bash
-$ npm install ngx-long-click --save
-```
+```ts
+  ngFirestoreDeep: AngularFirestoreDeep;  //  AngularFirestoreDeep variable
 
-and then from your Angular `AppModule`:
-
-```typescript
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
-
-// Import the library module
-import {NgxLongClickModule} from 'ngx-long-click';
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-
-    // Specify NgxLongClickModule library as an import
-    NgxLongClickModule
-  ],
-  providers: [],
-  bootstrap: [ AppComponent ]
-})
-export class AppModule { }
-```
-
-Once your library is imported, you can use its `longClick` directive in your Angular application:
-
-```html
-<div (longClick)="onLongClick($event)"></div>
-```
-
-`clickDelayMs` specifies the time in milliseconds the element need to be pressed before the event is fired 
-
-```html
-<div (longClick)="onLongClick($event)" clickDelayMs="1000">Press for 1 sec</div>
+  constructor(private ngFireStore: AngularFirestore) {
+    this.ngFirestoreDeep = new AngularFirestoreDeep(ngFireStore);  //  initialize AngularFireStoreDeep with AngularFirestore
+  }
 ```
 
 ## License

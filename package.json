@@ -7,9 +7,10 @@
     "copy:readme": "cp ./README.md ./projects/angularfirestore-deep",
     "build": "npm run build:lib && npm run build:demo",
     "build:lib": "npm run copy:readme && ng build angularfirestore-deep --prod",
-    "build:demo": "ng build demo --prod",
+    "build:demo": "ng build demo --prod --base-href /demo/",
+    "publish": "npm run publish:lib && publish:demo",
     "publish:lib": "npm publish --dir=./dist/angularfirestore-deep",
-    "publish:demo": "npx angular-cli-ghpages --dir=./dist/demo",
+    "publish:demo": "firebase deploy",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
