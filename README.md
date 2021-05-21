@@ -27,6 +27,7 @@ You can find a simple demo in projects/demo.
 
 It can be run locally if you provide your own firebaseConfig in the environment file or you can find a running demo here: 
 
+[Demo](https://angularfirestore-deep.web.app/demo/)
 
 ## Using the library
 
