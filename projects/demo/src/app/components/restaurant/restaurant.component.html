@@ -1,0 +1,27 @@
+
+
+<p>{{restaurant?.name}}</p>
+
+<p>Category: {{restaurant?.category}}</p>
+
+<p>Score: {{restaurant?.averageReviewScore}}</p>
+
+<p>Address: {{restaurant?.address | json}}</p>
+
+<p>Score: {{restaurant?.averageReviewScore}}</p>
+
+<p>Reviews:</p>
+<ul>
+  <li *ngFor="let review of restaurant?.reviews">
+    <p>Score: {{review.score}}</p>
+    <p>Text: {{review.text}}</p>
+    <p>User: {{review.userName}}</p>
+  </li>
+</ul>
+
+<p>Dishes:</p>
+<ul>
+  <li *ngFor="let dish of restaurant?.dishes">
+    <p>Name: {{dish.name}}</p>
+  </li>
+</ul>

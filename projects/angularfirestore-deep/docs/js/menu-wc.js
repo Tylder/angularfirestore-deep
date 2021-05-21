@@ -96,7 +96,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </a>
                         <ul class="links collapse " ${ isNormalMode ? 'id="modules-links"' : 'id="xs-modules-links"' }>
                             <li class="link">
-                                <a href="modules/AngularfirestoreDeepWrapperModule.html" data-type="entity-link">AngularfirestoreDeepWrapperModule</a>
+                                <a href="modules/AngularFirestoreDeepModule.html" data-type="entity-link">AngularFirestoreDeepModule</a>
                             </li>
                 </ul>
                 </li>
@@ -109,7 +109,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
-                                <a href="classes/AngularFirestoreDeepWrapper.html" data-type="entity-link">AngularFirestoreDeepWrapper</a>
+                                <a href="classes/AngularFirestoreDeep.html" data-type="entity-link">AngularFirestoreDeep</a>
                             </li>
                             <li class="link">
                                 <a href="classes/SubCollectionQuery.html" data-type="entity-link">SubCollectionQuery</a>
@@ -137,16 +137,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/DbItemFull.html" data-type="entity-link">DbItemFull</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/DbItemFullWithIndex.html" data-type="entity-link">DbItemFullWithIndex</a>
-                            </li>
-                            <li class="link">
-                                <a href="interfaces/DbItemWithIndex.html" data-type="entity-link">DbItemWithIndex</a>
-                            </li>
-                            <li class="link">
                                 <a href="interfaces/FirebaseDbItem.html" data-type="entity-link">FirebaseDbItem</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/FirestoreItem.html" data-type="entity-link">FirestoreItem</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/FirestoreItemFullWithIndex.html" data-type="entity-link">FirestoreItemFullWithIndex</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/FirestoreItemWithIndex.html" data-type="entity-link">FirestoreItemWithIndex</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/ImageItem.html" data-type="entity-link">ImageItem</a>

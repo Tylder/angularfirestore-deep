@@ -31,21 +31,50 @@
                <div class="content getting-started">
                    <div class="content-data">
 
-<h1 id="angularfirestorewrapper">AngularfirestoreWrapper</h1>
-<p>This library was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 11.1.2.</p>
-<h2 id="code-scaffolding">Code scaffolding</h2>
-<p>Run <code>ng generate component component-name --project angularfirestore-deep</code> to generate a new component. You can also use <code>ng generate directive|pipe|service|class|guard|interface|enum|module --project angularfirestore-deep</code>.</p>
-<blockquote>
-<p>Note: Don&#39;t forget to add <code>--project angularfirestore-deep</code> or else it will be added to the default project in your <code>angular.json</code> file. </p>
-</blockquote>
-<h2 id="build">Build</h2>
-<p>Run <code>ng build angularfirestore-deep</code> to build the project. The build artifacts will be stored in the <code>dist/</code> directory.</p>
-<h2 id="publishing">Publishing</h2>
-<p>After building your library with <code>ng build angularfirestore-deep</code>, go to the dist folder <code>cd dist/angularfirestore-deep</code> and run <code>npm publish</code>.</p>
-<h2 id="running-unit-tests">Running unit tests</h2>
-<p>Run <code>ng test angularfirestore-deep</code> to execute the unit tests via <a href="https://karma-runner.github.io">Karma</a>.</p>
-<h2 id="further-help">Further help</h2>
-<p>To get more help on the Angular CLI use <code>ng help</code> or go check out the <a href="https://angular.io/cli">Angular CLI Overview and Command Reference</a> page.</p>
+<h1 id="angularfirestore-deep">AngularFirestore-Deep</h1>
+<p>Simplify the work with complex and deep objects while retaining all the great benefits from Firebase Firestore.</p>
+<div><pre class="line-numbers"><code class="language-bash">ng add &#64;angular/fire
+
+npm install --save 
+
+npm install --save &#64;angularfirestore-deep</code></pre></div><p>Firestore splits its data up into collections and documents which is what allows it to be scalable and fast.</p>
+<p>The issues that this can cause is that the best way to store your data might not be the best way to work with and display that data.</p>
+<p>It can also be more difficult to figure out how to store your data in a way that is not only cheap in terms of reads but also cheap in terms of performance/speed.</p>
+<p>AngularFireStore-Deep is meant to help developers solve these issues.</p>
+<h3 id="documentation-and-examples">Documentation and Examples</h3>
+<p><a href="">Documentation</a></p>
+<p>It is as simple as:</p>
+<div><pre class="line-numbers"><code class="language-html">&lt;div (longClick)=&quot;onLongClick($event)&gt;&lt;/div&gt;</code></pre></div><h2 id="demo">Demo</h2>
+<p><a href="https://tylder.github.io/ngx-long-click/">Demo</a></p>
+<p>or </p>
+<p><code>npm run start</code> to run a local demo</p>
+<h2 id="using-the-library">Using the library</h2>
+<p>Import the library in any Angular application by running:</p>
+<div><pre class="line-numbers"><code class="language-bash">$ npm install ngx-long-click --save</code></pre></div><p>and then from your Angular <code>AppModule</code>:</p>
+<div><pre class="line-numbers"><code class="language-typescript">import { BrowserModule } from &#39;&#64;angular/platform-browser&#39;;
+import { NgModule } from &#39;&#64;angular/core&#39;;
+import { AppComponent } from &#39;./app.component&#39;;
+
+// Import the library module
+import {NgxLongClickModule} from &#39;ngx-long-click&#39;;
+
+&#64;NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+
+    // Specify NgxLongClickModule library as an import
+    NgxLongClickModule
+  ],
+  providers: [],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }</code></pre></div><p>Once your library is imported, you can use its <code>longClick</code> directive in your Angular application:</p>
+<div><pre class="line-numbers"><code class="language-html">&lt;div (longClick)=&quot;onLongClick($event)&quot;&gt;&lt;/div&gt;</code></pre></div><p><code>clickDelayMs</code> specifies the time in milliseconds the element need to be pressed before the event is fired </p>
+<div><pre class="line-numbers"><code class="language-html">&lt;div (longClick)=&quot;onLongClick($event)&quot; clickDelayMs=&quot;1000&quot;&gt;Press for 1 sec&lt;/div&gt;</code></pre></div><h2 id="license">License</h2>
+<p>MIT © <a href="mailto:lofgrendaniel@hotmail.com">Daniel Lofgren</a></p>
 
 
 

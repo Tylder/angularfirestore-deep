@@ -23,11 +23,11 @@ export interface DbItemFull extends FirestoreItem {  // attrs are required
   modifiedDate: Date | Timestamp;
 }
 
-export interface DbItemWithIndex extends FirestoreItem {
+export interface FirestoreItemWithIndex extends FirestoreItem {
   index: number;
 }
 
-export interface DbItemFullWithIndex extends DbItemFull {
+export interface FirestoreItemFullWithIndex extends DbItemFull {
   index: number;
 }
 

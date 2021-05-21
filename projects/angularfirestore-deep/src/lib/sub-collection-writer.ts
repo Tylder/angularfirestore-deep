@@ -5,10 +5,10 @@
  *
  * Allows you to have a complex deep object and write it to firestore by splitting it up in to collections and documents.
  *
- * Example restaurant object that we wish to save to firestore.
+ * Example services object that we wish to save to firestore.
  *
- *    const restaurant = {
- *       name: 'example restaurant',
+ *    const services = {
+ *       name: 'example services',
  *       address: {
  *          zipcode: 12345,
  *          city: 'example city',
@@ -47,18 +47,18 @@
  *
  *  Another issue is that you might have thousands of reviews and since they are all saved in the same document.
  *  If for example you wish to show a list of all restaurants and all you want to show is the name before a user clicks
- *  the restaurant you would still have to download the entire restaurant object containing all those thousands of reviews.
+ *  the services you would still have to download the entire services object containing all those thousands of reviews.
  *  This would be ok in terms of cost of reads but very expensive in terms of performance.
- *  Each restaurant object would be huge, killing the user's data plan and slowing down your site.
+ *  Each services object would be huge, killing the user's data plan and slowing down your site.
  *
- *  It would be much better to make reviews a collection inside restaurant. That way you could show the restaurant name
+ *  It would be much better to make reviews a collection inside services. That way you could show the services name
  *  without downloading all the reviews.
  *  If you wish to show an average review score the most efficient way would be to to calculate that
- *  each time you update the review collection and adding the average to the restaurant document.
+ *  each time you update the review collection and adding the average to the services document.
  *
  *  What this wrapper intends to do is to simplify saving some data in sub collections without changing the way you
  *  work with the data.
- *  So you could have a restaurant object that contains all the data and when you add it to firestore the data is automatically
+ *  So you could have a services object that contains all the data and when you add it to firestore the data is automatically
  *  placed in your sub collections without you having to worry about it after you initially set it up.
  *
  *  Another huge advantage to separating your data in to sub collections is that it allows you to choose between

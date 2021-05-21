@@ -8,7 +8,7 @@ An example restaurant object might look like this:
 
 ```ts
 {
-    name: 'Tony's Pizzeria and Italian Food'",
+    name: 'Tonys Pizzeria and Italian Food',
     category: 'italian',
     averageReviewScore: 6.5,
     address: {

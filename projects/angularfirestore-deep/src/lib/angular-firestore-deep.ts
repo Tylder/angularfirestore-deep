@@ -16,7 +16,7 @@ import firebase from 'firebase';
 import WriteBatch = firebase.firestore.WriteBatch;
 import FirestoreError = firebase.firestore.FirestoreError;
 import DocumentData = firebase.firestore.DocumentData;
-import {FirestoreItem, DbItemFullWithIndex} from './models/firestoreItem';
+import {FirestoreItem, FirestoreItemFullWithIndex} from './models/firestoreItem';
 import {SubCollectionQuery} from './sub-collection-query';
 import {SubCollectionWriter} from './sub-collection-writer';
 
@@ -72,7 +72,7 @@ interface CurrentDocSubCollectionSplit {
  *
  *
  */
-export class AngularFirestoreDeepWrapper<T> {
+export class AngularFirestoreDeep {
 
   /**
    * Constructor for AngularFirestoreWrapper
@@ -152,8 +152,8 @@ export class AngularFirestoreDeepWrapper<T> {
   }
 
   // TODO make listentoTypes and addExtras a single attribute called options
-  protected listenForCollection$<A extends FirestoreItem>(collectionFs: AngularFirestoreCollection<FirestoreItem>,
-                                                          listenToTypes?: DocumentChangeType[]): Observable<A[]> {
+  public listenForCollection$<A extends FirestoreItem>(collectionFs: AngularFirestoreCollection<FirestoreItem>,
+                                                       listenToTypes?: DocumentChangeType[]): Observable<A[]> {
     /**
      * Returns an observable that will emit whenever the ref changes in any way.
      * Also adds the id and ref to the object.
@@ -411,6 +411,13 @@ export class AngularFirestoreDeepWrapper<T> {
     );
   }
 
+  /**
+   *
+   * @param data the data to be saved
+   * @param collectionFs AngularFirestoreCollection reference to where on firestore the item should be saved
+   * @param subCollectionWriters see documentation for SubCollectionWriter for more details on how these are used
+   * @param docId If a docId is given it will use that specific id when saving the doc, if no docId is given a ranom id will be used.
+   */
   public addDeep$<A extends FirestoreItem>(data: A,
                                            collectionFs: AngularFirestoreCollection,
                                            subCollectionWriters?: SubCollectionWriter[],
@@ -616,9 +623,9 @@ export class AngularFirestoreDeepWrapper<T> {
 
     const res$ = this.listenForDocDeep$(docFs, subCollectionQueries).pipe(
       take(1),
-      tap(data => console.log(data)),
+      // tap(data => console.log(data)),
       map((oldData: A) => this.removeDataExtrasRecursiveHelper(oldData, subCollectionWriters)),
-      tap(data => console.log(data)),
+      // tap(data => console.log(data)),
       mergeMap((oldData: A) => {
 
         return this.addDeep$(oldData, collectionFs, subCollectionWriters, newName).pipe( /* add the data under newName*/
@@ -755,22 +762,22 @@ export class AngularFirestoreDeepWrapper<T> {
 
   /* Move Item in Array */
 
-  protected moveItemInArray$<A extends DbItemFullWithIndex>(array: A[], fromIndex: number, toIndex: number): Observable<any> {
-    console.log(fromIndex, toIndex);
+  protected moveItemInArray$<A extends FirestoreItemFullWithIndex>(array: A[], fromIndex: number, toIndex: number): Observable<any> {
+    // console.log(fromIndex, toIndex);
 
     if (fromIndex == null || toIndex == null || fromIndex === toIndex || array.length <= 0) { // we didnt really move anything
       return of(null);
     }
 
-    const batch = this.getBatchFromMoveItemInIndexedDocs(array as DbItemFullWithIndex[], fromIndex, toIndex);
+    const batch = this.getBatchFromMoveItemInIndexedDocs(array as FirestoreItemFullWithIndex[], fromIndex, toIndex);
 
     return this.batchCommit(batch);
   }
 
-  protected getBatchFromMoveItemInIndexedDocs<A extends DbItemFullWithIndex>(array: Array<A>,
-                                                                             fromIndex: number,
-                                                                             toIndex: number,
-                                                                             useCopy = false): firebase.firestore.WriteBatch {
+  protected getBatchFromMoveItemInIndexedDocs<A extends FirestoreItemFullWithIndex>(array: Array<A>,
+                                                                                    fromIndex: number,
+                                                                                    toIndex: number,
+                                                                                    useCopy = false): firebase.firestore.WriteBatch {
     /**
      * Moved item within the same list so we need to update the index of all items in the list;
      * Use a copy if you dont wish to update the given array, for example when you watch to just listen for the change of the db..
@@ -808,12 +815,12 @@ export class AngularFirestoreDeepWrapper<T> {
     return batch;
   }
 
-  protected getBatchFromTransferItemInIndexedDocs<A extends DbItemFullWithIndex>(previousArray: A[],
-                                                                                 currentArray: A[],
-                                                                                 previousIndex: number,
-                                                                                 currentIndex: number,
-                                                                                 additionalDataUpdateOnMovedItem?: {[key: string]: any},
-                                                                                 useCopy = false): firebase.firestore.WriteBatch {
+  protected getBatchFromTransferItemInIndexedDocs<A extends FirestoreItemFullWithIndex>(previousArray: A[],
+                                                                                        currentArray: A[],
+                                                                                        previousIndex: number,
+                                                                                        currentIndex: number,
+                                                                                        additionalDataUpdateOnMovedItem?: {[key: string]: any},
+                                                                                        useCopy = false): firebase.firestore.WriteBatch {
 
     /**
      * Used mainly for drag and drop scenarios where we drag an item from one array to another and the the docs have an index attribute.
@@ -858,7 +865,7 @@ export class AngularFirestoreDeepWrapper<T> {
     return batch;
   }
 
-  protected getBatchFromDeleteItemInIndexedDocs<A extends DbItemFullWithIndex>(array: A[]): firebase.firestore.WriteBatch {
+  protected getBatchFromDeleteItemInIndexedDocs<A extends FirestoreItemFullWithIndex>(array: A[]): firebase.firestore.WriteBatch {
 
     /**
      * Run this on collections with a fixed order using an index: number attribute;
@@ -878,7 +885,7 @@ export class AngularFirestoreDeepWrapper<T> {
     return batch;
   }
 
-  protected updateIndexAfterDeleteInIndexedDocs<A extends DbItemFullWithIndex>(array: A[]): Observable<any> {
+  protected updateIndexAfterDeleteInIndexedDocs<A extends FirestoreItemFullWithIndex>(array: A[]): Observable<any> {
     const batch = this.getBatchFromDeleteItemInIndexedDocs(array);
     return this.batchCommit(batch);
   }
@@ -949,9 +956,9 @@ export class AngularFirestoreDeepWrapper<T> {
     );
   }
 
-  protected deleteDeep$(docFs: AngularFirestoreDocument, subCollectionQueries: SubCollectionQuery[]): Observable<any> {
+  public deleteDeep$(docFs: AngularFirestoreDocument, subCollectionQueries: SubCollectionQuery[]): Observable<any> {
 
-    console.log('deleteDeep');
+    // console.log('deleteDeep');
     const res$ = this.getFirestoreDocumentsDeep$(docFs, subCollectionQueries).pipe(
       switchMap((docList: AngularFirestoreDocument<DocumentData>[]) => this.deleteMultiple$(docList)),
       catchError((err) => { // TODO super ugly and I dont know why this error is thrown..still works
@@ -966,7 +973,7 @@ export class AngularFirestoreDeepWrapper<T> {
 
   protected deleteDeepByItem$(item: FirestoreItem, subCollectionQueries: SubCollectionQuery[]): Observable<any> {
 
-    console.log('deleteDeepByItem$');
+    // console.log('deleteDeepByItem$');
 
     const docsFs = this.getFirestoreDocumentsFromDbItem(item, subCollectionQueries);
 

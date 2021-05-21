@@ -1,24 +1,90 @@
-# AngularfirestoreWrapper
+# AngularFirestore-Deep
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
+Simplify the work with complex and deep objects while retaining all the great benefits from Firebase Firestore.
 
-## Code scaffolding
+```bash
+ng add @angular/fire
 
-Run `ng generate component component-name --project angularfirestore-deep` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project angularfirestore-deep`.
-> Note: Don't forget to add `--project angularfirestore-deep` or else it will be added to the default project in your `angular.json` file. 
+npm install --save 
 
-## Build
+npm install --save @angularfirestore-deep
+```
 
-Run `ng build angularfirestore-deep` to build the project. The build artifacts will be stored in the `dist/` directory.
+Firestore splits its data up into collections and documents which is what allows it to be scalable and fast.
 
-## Publishing
+The issues that this can cause is that the best way to store your data might not be the best way to work with and display that data.
 
-After building your library with `ng build angularfirestore-deep`, go to the dist folder `cd dist/angularfirestore-deep` and run `npm publish`.
+It can also be more difficult to figure out how to store your data in a way that is not only cheap in terms of reads but also cheap in terms of performance/speed.
 
-## Running unit tests
+AngularFireStore-Deep is meant to help developers solve these issues.
 
-Run `ng test angularfirestore-deep` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Documentation and Examples
+[Documentation]()
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+It is as simple as:
+
+```html
+<div (longClick)="onLongClick($event)></div>
+```
+
+## Demo
+
+[Demo](https://tylder.github.io/ngx-long-click/)
+
+or 
+
+`npm run start` to run a local demo
+
+## Using the library
+
+Import the library in any Angular application by running:
+
+```bash
+$ npm install ngx-long-click --save
+```
+
+and then from your Angular `AppModule`:
+
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+
+// Import the library module
+import {NgxLongClickModule} from 'ngx-long-click';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+
+    // Specify NgxLongClickModule library as an import
+    NgxLongClickModule
+  ],
+  providers: [],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+```
+
+Once your library is imported, you can use its `longClick` directive in your Angular application:
+
+```html
+<div (longClick)="onLongClick($event)"></div>
+```
+
+`clickDelayMs` specifies the time in milliseconds the element need to be pressed before the event is fired 
+
+```html
+<div (longClick)="onLongClick($event)" clickDelayMs="1000">Press for 1 sec</div>
+```
+
+## License
+
+MIT © [Daniel Lofgren](mailto:lofgrendaniel@hotmail.com)

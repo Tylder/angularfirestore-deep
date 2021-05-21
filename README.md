@@ -1,8 +1,14 @@
 # AngularFirestore-Deep
 
-Work with complex and deep objects while retaining all the great benefits from Firebase Firestore.
+Simplify the work with complex and deep objects while retaining all the great benefits from Firebase Firestore.
 
-<strong><pre>npm install --save @angularfirestore-deep</pre></strong>
+```bash
+ng add @angular/fire
+
+npm install --save 
+
+npm install --save @angularfirestore-deep
+```
 
 Firestore splits its data up into collections and documents which is what allows it to be scalable and fast.
 

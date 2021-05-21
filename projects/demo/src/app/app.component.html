@@ -1,0 +1,29 @@
+<h1>Restaurants in firestore: </h1>
+
+<div *ngFor="let restaurant of restaurants$ | async">
+  <h3>{{restaurant?.name}}</h3>
+
+  <button class="button" *ngIf="(selectedRestaurant$ | async) != restaurant" (click)="selectRestaurant(restaurant)">Expand</button>
+  <button class="button" (click)="deleteRestaurant(restaurant)">Delete from firestore</button>
+</div>
+
+<h2>Selected Restaurant:</h2>
+
+<ng-container *ngIf="(selectedRestaurantFull$ | async) as fullRestaurant">
+  <app-restaurant [restaurant]="fullRestaurant"></app-restaurant>
+</ng-container>
+
+<h1>Mock Restaurants</h1>
+
+
+<div *ngFor="let restaurant of mockRestaurants">
+  <h3>{{restaurant?.name}}</h3>
+
+  <button class="button" *ngIf="selectedMockRestaurant != restaurant" (click)="selectMockRestaurant(restaurant)">Expand</button>
+  <button class="button" (click)="addRestaurant(restaurant)">Add to firestore</button>
+</div>
+
+<h2>Selected Mock Restaurant:</h2>
+<app-restaurant *ngIf="selectedMockRestaurant != null" [restaurant]="selectedMockRestaurant"></app-restaurant>
+
+

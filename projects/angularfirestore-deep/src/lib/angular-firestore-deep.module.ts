@@ -11,4 +11,4 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
   ],
   exports: []
 })
-export class AngularfirestoreDeepWrapperModule { }
+export class AngularFirestoreDeepModule { }
