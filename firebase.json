@@ -4,8 +4,19 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "public",
+    "public": "./dist",
+    "rewrites": [
+      {
+        "source": "/demo",
+        "destination": "/demo/index.html"
+      },
+      {
+        "source": "/docs",
+        "destination": "/docs/index.html"
+      }
+    ],
     "ignore": [
+      "/angularfirestore-deep",
       "firebase.json",
       "**/.*",
       "**/node_modules/**"

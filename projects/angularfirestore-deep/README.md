@@ -5,8 +5,6 @@ Simplify the work with complex and deep objects while retaining all the great be
 ```bash
 ng add @angular/fire
 
-npm install --save 
-
 npm install --save @angularfirestore-deep
 ```
 
@@ -22,22 +20,13 @@ AngularFireStore-Deep is meant to help developers solve these issues.
 [Documentation]()
 
 
+### Demo
+You can find a simple demo in projects/demo.
 
+It can be run locally if you provide your own firebaseConfig in the environment file or you can find a running demo here: 
 
+[Demo]() 
 
-It is as simple as:
-
-```html
-<div (longClick)="onLongClick($event)></div>
-```
-
-## Demo
-
-[Demo](https://tylder.github.io/ngx-long-click/)
-
-or 
-
-`npm run start` to run a local demo
 
 ## Using the library
 

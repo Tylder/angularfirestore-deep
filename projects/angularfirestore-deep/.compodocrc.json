@@ -1,6 +1,6 @@
 {
   "open": true,
-  "output": "docs",
+  "output": "../../dist/docs",
   "serve": true,
   "theme": "original",
   "tsconfig": "tsconfig.doc.json",
