@@ -18,7 +18,7 @@ AngularFireStore-Deep is meant to help developers solve these issues.
 
 ### Documentation and Examples
 [Documentation](https://angularfirestore-deep.web.app/docs/)
-
+<br>
 [Github](https://github.com/Tylder/angularfirestore-deep/tree/master/projects/angularfirestore-deep) 
 
 
