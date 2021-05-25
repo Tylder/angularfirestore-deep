@@ -4,7 +4,6 @@ Simplify the work with complex and deep objects while retaining all the great be
 
 ```bash
 ng add @angular/fire
-
 npm install --save @angularfirestore-deep
 ```
 
@@ -22,12 +21,40 @@ AngularFireStore-Deep is meant to help developers solve these issues.
 [Github](https://github.com/Tylder/angularfirestore-deep/tree/master/projects/angularfirestore-deep) 
 
 
+> [Introduction](https://angularfirestore-deep.web.app/docs/additional-documentation/introduction.html)
+> 
+>
+> #### Actions 
+> [Read](https://angularfirestore-deep.web.app/docs/additional-documentation/actions/read.html)
+> <br>
+> [Write](https://angularfirestore-deep.web.app/docs/additional-documentation/actions/write.html)
+> <br>
+> [Update](https://angularfirestore-deep.web.app/docs/additional-documentation/actions/update.html)
+> <br>
+> [Delete](https://angularfirestore-deep.web.app/docs/additional-documentation/actions/delete.html)
+> <br>
+> [Edit Name](https://angularfirestore-deep.web.app/docs/additional-documentation/actions/edit-name.html)
+
+
 ### Demo
 You can find a simple demo in projects/demo.
 
 It can be run locally if you provide your own firebaseConfig in the environment file or you can find a running demo here: 
-
+<br>
 [Demo](https://angularfirestore-deep.web.app/demo/)
+
+> Steps to run locally:
+> <ol>
+>    <li>Clone this repo</li>
+>    <li>Setup a firebase project and place the config 'firebaseConfig' here: projects/demo/src/environments/firebase-secure.ts and export it.</li>
+>    <li>Run the following commands:</li>
+> </ol>
+>
+
+```bash
+npm install
+npm run start
+```
 
 ## Using the library
 
@@ -40,6 +67,8 @@ Use the library in any Angular application:
     this.ngFirestoreDeep = new AngularFirestoreDeep(ngFireStore);  //  initialize AngularFireStoreDeep with AngularFirestore
   }
 ```
+
+See the [Documentation](https://angularfirestore-deep.web.app/docs/) for much more information. 
 
 ## License
 

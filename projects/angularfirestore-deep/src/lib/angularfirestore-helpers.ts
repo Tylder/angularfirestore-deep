@@ -1,5 +1,5 @@
 /** Helper method to get reference from path, the path can be either to a Document or Collection */
-import {Action, AngularFirestoreDocument, DocumentData, DocumentReference} from '@angular/fire/firestore';
+import {Action, AngularFirestore, AngularFirestoreDocument, DocumentData, DocumentReference} from '@angular/fire/firestore';
 import {CollectionReference, DocumentSnapshot} from '@angular/fire/firestore/interfaces';
 import {FirestoreItem} from './models/firestoreItem';
 import {AngularFirestoreCollection} from '@angular/fire/firestore/collection/collection';
@@ -8,53 +8,68 @@ import {Observable} from 'rxjs/dist/types';
 import firebase from 'firebase';
 
 /** Helper method to get reference from path, the path can be either to a Document or Collection */
-export function getRefFromPath(path: string): DocumentReference | CollectionReference {
+export function getRefFromPath(path: string, ngFirestore: AngularFirestore): DocumentReference | CollectionReference {
   const pathSegmentAmount: number = path.split('/').length;
   if (pathSegmentAmount % 2 === 0) { // even number means doc
-    return this.ngFirestore.doc(path).ref;
+    return ngFirestore.doc(path).ref;
   } else { // odd meaning collection
-    return this.ngFirestore.collection(path).ref;
+    return ngFirestore.collection(path).ref;
   }
 }
 
 /** If given the path to a Document it returns the parent AngularFirestoreCollection,
  * if given a path to a collection it just turns it into a AngularFirestoreCollection
  */
-export function getCollectionFsFromPath<A extends FirestoreItem>(path: string): AngularFirestoreCollection<A> {
+export function getCollectionFsFromPath<A extends FirestoreItem>(path: string,
+                                                                 ngFirestore: AngularFirestore): AngularFirestoreCollection<A> {
   const collectionPathSegments = path.split('/');
   const pathSegmentAmount: number = path.split('/').length;
 
   if (pathSegmentAmount % 2 === 0) { // even number means doc
     collectionPathSegments.pop(); // delete last
-    return this.ngFirestore.collection(collectionPathSegments.join('/'));
+    return ngFirestore.collection(collectionPathSegments.join('/'));
   }
   else {
-    return this.ngFirestore.collection(path);
+    return ngFirestore.collection(path);
   }
 }
 
-/** Get AngularFirestoreDocument from path */
-export function getDocFsFromPath(path: string): AngularFirestoreDocument {
-  return this.ngFirestore.doc(path);
+/**
+ * Get AngularFirestoreDocument from path
+ *
+ * @param path the path to the AngularFirestoreDocument
+ * @param ngFirestore the AngularFirestore object
+ */
+export function getDocFsFromPath(path: string, ngFirestore: AngularFirestore): AngularFirestoreDocument {
+  return ngFirestore.doc(path);
 }
 
-/** Returns the next higher level doc from either a collection or a doc path */
-export function getParentDocFsFromPath<A extends FirestoreItem>(path: string): AngularFirestoreDocument<A> {
+/**
+ * Returns the next higher level doc from either a collection or a doc path
+ *
+ * @param path the path to the AngularFirestoreDocument
+ * @param ngFirestore the AngularFirestore object
+ */
+export function getParentDocFsFromPath<A extends FirestoreItem>(path: string, ngFirestore: AngularFirestore): AngularFirestoreDocument<A> {
 
   let pathSegments: string[] =  path.split('/');
   const pathSegmentAmount: number = pathSegments.length;
 
   if (pathSegmentAmount % 2 === 0) { // even number means doc, so we need to remove doc and the collection to get the parent doc
     pathSegments = pathSegments.slice(0, pathSegments.length - 2);
-    return this.ngFirestore.doc(pathSegments.join('/'));
+    return ngFirestore.doc(pathSegments.join('/'));
   }
   else { // odd, so its a colletion
     pathSegments = pathSegments.slice(0, pathSegments.length - 1);
-    return this.ngFirestore.doc(pathSegments.join('/'));
+    return ngFirestore.doc(pathSegments.join('/'));
   }
 }
 
-/** Simple check if Document exists, returns true if Document exist */
+/**
+ * Simple check if Document exists, returns true if Document exist
+ *
+ * @param docFs AngularFirestoreDocument to check if exist
+ */
 export function isDocExist$(docFs: AngularFirestoreDocument<DocumentData>): Observable<boolean> {
   return docFs.snapshotChanges().pipe(
     take(1),
@@ -64,24 +79,45 @@ export function isDocExist$(docFs: AngularFirestoreDocument<DocumentData>): Obse
   );
 }
 
-/** Get the AngularFirestoreDocument object for a firestore DocumentReference */
-export function getDocFsFromRef(ref: DocumentReference): AngularFirestoreDocument {
-  return this.ngFirestore.doc(ref.path);
+/**
+ * Get the AngularFirestoreDocument object for a firestore DocumentReference
+ *
+ * AngularFirestore and Firestore uses different references for Documents and Collections.
+ *
+ * @param ref Firestore DocumentReference to Document
+ * @param ngFirestore the AngularFirestore object
+ */
+export function getDocFsFromRef(ref: DocumentReference, ngFirestore: AngularFirestore): AngularFirestoreDocument {
+  return ngFirestore.doc(ref.path);
 }
 
-/** Add createdDate to the object */
+/**
+ * Add createdDate to the object, if createdDate already exists then we do not overwrite it
+ *
+ * @param data data where the createdData will be added
+ */
 export function addCreatedDate<A>(data: A): A {
+  if ('createdDate' in data) {
+    return data;
+  }
+
   const createdDate = new Date();
   return {...data, createdDate};
 }
 
-/** Add modifiedDate to the object */
+/**
+ * Add modifiedDate to the object
+ *
+ * @param data data where the modifiedDate will be added
+ */
 export function addModifiedDate<A>(data: A): A {
   const modifiedDate = new Date();
   return {...data, modifiedDate};
 }
 
-/** Add createdBy to the object
+/**
+ * Add createdBy to the object
+ *
  * @param createdBy profile, user or any type of data
  */
 export function addCreatedBy<A>(data: A, createdBy: any): A {
@@ -89,7 +125,11 @@ export function addCreatedBy<A>(data: A, createdBy: any): A {
 }
 
 /**
+ * Firestore saves time as timestamps and javascript uses Date objects.
+ * This functions helps convert the createdDate and modifiedDate from timestamp
+ * to Date()
  *
+ * @param data data that contains 'createdDate' and/or 'modifiedDate'
  */
 export function convertTimestampToDate<A extends FirestoreItem>(data: A): A {
   if (data.hasOwnProperty('createdDate')) {

@@ -1,6 +1,11 @@
-# All actions
+# Actions
 
-- [creation](./actions/creation-of-a-todo.html)
-- [edition](./actions/edition-of-a-todo.html)
-- [delete](./actions/delete-a-todo.html)
-- [change status](./actions/update-the-status-of-a-todo.html)
+> [Read](./actions/read.html)
+> <br>
+> [Write](./actions/write.html)
+> <br>
+> [Update](./actions/update.html)
+> <br>
+> [Delete](./actions/delete.html)
+> <br>
+> [Edit Name](./actions/edit-name.html)

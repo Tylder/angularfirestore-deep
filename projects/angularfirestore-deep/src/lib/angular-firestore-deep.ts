@@ -7,7 +7,6 @@ import {
   DocumentReference,
   DocumentSnapshotExists
 } from '@angular/fire/firestore';
-import {CollectionReference, DocumentSnapshot} from '@angular/fire/firestore/interfaces';
 import {catchError, filter, map, mergeMap, switchMap, take, tap} from 'rxjs/operators';
 import {AngularFirestoreCollection} from '@angular/fire/firestore/collection/collection';
 import {moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
@@ -22,9 +21,6 @@ import {SubCollectionWriter} from './sub-collection-writer';
 
 import {
   getRefFromPath,
-  getCollectionFsFromPath,
-  getDocFsFromPath,
-  getParentDocFsFromPath,
   convertTimestampToDate,
   addCreatedDate,
   addModifiedDate
@@ -44,6 +40,9 @@ export interface AddDocumentWrapper<A> {
 }
 
 
+/**
+ * Action to be taken by listener if the document does not exist.
+ */
 export enum DocNotExistAction {
   /** returns a null object */
   RETURN_NULL,
@@ -61,13 +60,15 @@ export enum DocNotExistAction {
 
 /** Used internally */
 interface CurrentDocSubCollectionSplit {
+  /** contains the document that is considered the current */
   currentDoc: FirestoreItem;
+  /** sub collections of current document */
   subCollections: {[index: string]: any};
 }
 
 
 /**
- * Main Wrapper.
+ * Main Class.
  *
  *
  *
@@ -85,20 +86,17 @@ export class AngularFirestoreDeep {
 
   /* ----------  LISTEN -------------- */
 
-  // listenForChangesInBaseCollection$(): Observable<T[]> {
-  //   return this.listenForCollection$(this.baseCollectionFs);
-  // }
-
-  // protected listenForDocInBaseCollectionById<A>(id: string, actionIfNotExist: DocNotExistAction = DocNotExistAction.RETURN_ALL_BUT_DATA):
-  //   Observable<A> {
-  //   return this.listenForDoc$(
-  //     this.baseCollectionFs.doc(id),
-  //     actionIfNotExist
-  //   );
-  // }
-
-  protected listenForDoc$<A extends FirestoreItem>(docFs: AngularFirestoreDocument<FirestoreItem>,
-                                                   actionIfNotExist: DocNotExistAction = DocNotExistAction.RETURN_ALL_BUT_DATA):
+  /**
+   * Same as AngularFirestoreDocument.snapshotChanges but it adds the properties in FirebaseDbItem
+   * and also allows for to choose action to take when document does not exist
+   *
+   * Important to understand this is will trigger for every change/update on the document we are listening to.
+   *
+   * @param docFs AngularFirestoreDocument that will be listend to
+   * @param actionIfNotExist Action to take if document does not exist
+   */
+  public listenForDoc$<A extends FirestoreItem>(docFs: AngularFirestoreDocument<FirestoreItem>,
+                                                actionIfNotExist: DocNotExistAction = DocNotExistAction.RETURN_ALL_BUT_DATA):
     Observable<A> {
     /**
      * Returns an observable that will emit whenever the ref changes in any way.
@@ -151,20 +149,51 @@ export class AngularFirestoreDeep {
     return this.handleRes$<A>(res$, 'listenForDoc$', {docFs});
   }
 
-  // TODO make listentoTypes and addExtras a single attribute called options
+  /**
+   * Same as AngularFirestoreCollection.snapshotChanges but it adds the properties in FirebaseDbItem.
+   *
+   * Important to understand this is will trigger for every change/update on any of the documents we are listening to.
+   * That means that if any document we are listening to is changed the entire object will be triggered containing the updated data.
+   *
+   *
+   *    Example usage.
+   *
+   *    ngFirestoreDeep: AngularFirestoreDeep;  //  AngularFirestoreDeep variable
+   *    restaurantCollectionFs = this.ngFireStore.collection('restaurants'); // AngularFirestoreCollectionRef to restaurants
+   *
+   *    constructor(private ngFireStore: AngularFirestore) {
+   *        this.ngFirestoreDeep = new AngularFirestoreDeep(ngFireStore);  //  initialize AngularFireStoreDeep with AngularFirestore
+   *    }
+   *
+   *    listenForRestaurants$(): Observable<RestaurantItem[]> {
+   *        return this.ngFirestoreDeep.listenForCollection$<RestaurantItem>(this.restaurantCollectionFs);
+   *    }
+   *
+   *    If you do not wish to listen for changes and only care about getting the values once
+   *
+   *    getRestaurants$(): Observable<RestaurantItem[]> {
+   *        return this.ngFirestoreDeep.listenForCollection$<RestaurantItem>(this.restaurantCollectionFs).pipe(
+   *          take(1)
+   *        );
+   *    }
+   *
+   *
+   * @param collectionFs the AngularFirestoreCollection which will be listened to
+   * @param documentChangeTypes list of DocumentChangeType that will be listened to, if null listen to all
+   */
   public listenForCollection$<A extends FirestoreItem>(collectionFs: AngularFirestoreCollection<FirestoreItem>,
-                                                       listenToTypes?: DocumentChangeType[]): Observable<A[]> {
+                                                       documentChangeTypes?: DocumentChangeType[]): Observable<A[]> {
     /**
      * Returns an observable that will emit whenever the ref changes in any way.
      * Also adds the id and ref to the object.
      */
 
-    if (listenToTypes === undefined || listenToTypes === null || listenToTypes.length <= 0) { listenToTypes = ['added', 'removed', 'modified']; }
+    if (documentChangeTypes === undefined || documentChangeTypes === null || documentChangeTypes.length <= 0) { documentChangeTypes = ['added', 'removed', 'modified']; }
 
     const res$ = collectionFs.snapshotChanges().pipe(
 
       map((actions: DocumentChangeAction<FirestoreItem>[]) => actions.filter(a => {
-        return listenToTypes.includes(a.type);
+        return documentChangeTypes.includes(a.type);
       })),
       map((actions: DocumentChangeAction<FirestoreItem>[]) => actions.map(a => {
         const data = a.payload.doc.data() as A;
@@ -182,15 +211,16 @@ export class AngularFirestoreDeep {
       }))
     ) as Observable<A[]>;
 
-    return this.handleRes$<A[]>(res$, 'listenForCollection$', {collectionFs, listenToTypes});
+    return this.handleRes$<A[]>(res$, 'listenForCollection$', {collectionFs, listenToTypes: documentChangeTypes});
   }
 
 
   /**
-   * Wrapper for listenForDocDeepRecursiveHelper$ so that we can cast the return to the correct type
-   * All logic is in listenForDocDeepRecursiveHelper$.
    *
-   * @link SubCollectionQuery
+   * Allows for listening to documents and collections n deep up to the firestore max of 100 levels.
+   *
+   * Triggers for any change in any document that is listened to.
+   *
    *
    * E.x:
    *      const subCollectionQueries: SubCollectionQuery[] = [
@@ -206,6 +236,9 @@ export class AngularFirestoreDeep {
    *     ];
    *
    *     this.listenForDocAndSubCollections<Product>(docFs, collections)
+   *
+   * Wrapper for listenForDocDeepRecursiveHelper$ so that we can cast the return to the correct type
+   * All logic is in listenForDocDeepRecursiveHelper$.
    *
    * @param docFs - a docFs with potential queryFn
    * @param subCollectionQueries - see example
@@ -327,13 +360,13 @@ export class AngularFirestoreDeep {
     );
   }
 
-  protected listenForCollectionRecursively<A extends FirestoreItem>(path: string,
-                                                                    collectionKey: string,
-                                                                    orderKey?: string): Observable<any> {
 
-    /**
-     * Listens for collections inside collections with the same name to an unlimited depth and returns all of it as an array.
-     */
+  /**
+   * Listens for collections inside collections with the same name to an unlimited depth and returns all of it as an array.
+   */
+  public listenForCollectionRecursively$<A extends FirestoreItem>(path: string,
+                                                                  collectionKey: string,
+                                                                  orderKey?: string): Observable<any> {
     let ref;
 
     if (orderKey != null) {
@@ -356,7 +389,7 @@ export class AngularFirestoreDeep {
 
           const nextLevelPath = this.ngFirestore.doc(item.path).collection(collectionKey).ref.path;  // one level deeper
 
-          const nextLevelItems$ = this.listenForCollectionRecursively(nextLevelPath, collectionKey, orderKey).pipe(
+          const nextLevelItems$ = this.listenForCollectionRecursively$(nextLevelPath, collectionKey, orderKey).pipe(
             map((nextLevelItems: A[]) => {
               if (nextLevelItems.length > 0) { return {...item, [collectionKey]: nextLevelItems } as A; }
               else {  return {...item} as A; }  // dont include an empty array
@@ -375,25 +408,35 @@ export class AngularFirestoreDeep {
 
   /* ----------  ADD -------------- */
 
-  // protected addToBaseCollection$(data: T, id?: string): Observable<T> {
-  //   return this.add$<T>(data, this.baseCollectionFs, id);
-  // }
+  /**
+   * A replacement/extension to the AngularFirestoreCollection.add.
+   * Does the same as AngularFirestoreCollection.add but can also add createdDate and modifiedDate and returns
+   * the data with the added properties in FirebaseDbItem
+   *
+   * @param data the data to be added to the document, cannot contain types firestore won't allow
+   * @param collectionFs the AngularFirestoreCollection where the document should be added
+   * @param isAddDates if true adds modifiedDate and createdDate to the data
+   * @param id if given the added document will be given this id, otherwise a random unique id will be used.
+   */
+  public add$<A extends DocumentData>(data: A, collectionFs: AngularFirestoreCollection, isAddDates: boolean = true, id?: string):
+    Observable<A> {
 
-  protected add$<A>(data: A, collectionFs: AngularFirestoreCollection, id?: string): Observable<A> {
     return of(null).pipe(
       mergeMap(() => {
         let res$: Observable<any>;
 
-        data = addCreatedDate(data);
-        data = addModifiedDate(data);
+        if (isAddDates) {
+          data = addCreatedDate(data);
+          data = addModifiedDate(data);
+        }
 
         if (id !== undefined) { res$ = from(collectionFs.doc(id).set(data)); }
         else { res$ = from(collectionFs.add(data)); }
 
         res$ = res$.pipe(
           // tap(() => this.snackBar.open('Success', 'Added', {duration: 1000})),
-          tap(ref => console.log(ref)),
-          tap(() => console.log(data)),
+          // tap(ref => console.log(ref)),
+          // tap(() => console.log(data)),
           map((ref: DocumentReference) => {
             if (id === undefined) {
               return {...data, id: ref.id, path: ref.path, ref, docFs: this.ngFirestore.doc(ref.path) };
@@ -412,15 +455,18 @@ export class AngularFirestoreDeep {
   }
 
   /**
+   * Add document to firestore and split it up into sub collection.
    *
    * @param data the data to be saved
    * @param collectionFs AngularFirestoreCollection reference to where on firestore the item should be saved
    * @param subCollectionWriters see documentation for SubCollectionWriter for more details on how these are used
+   * @param isAddDates if true 'createdDate' and 'modifiedDate' is added to the data
    * @param docId If a docId is given it will use that specific id when saving the doc, if no docId is given a ranom id will be used.
    */
   public addDeep$<A extends FirestoreItem>(data: A,
                                            collectionFs: AngularFirestoreCollection,
                                            subCollectionWriters?: SubCollectionWriter[],
+                                           isAddDates: boolean = true,
                                            docId?: string): Observable<A> {
 
     const split = this.splitDataIntoCurrentDocAndSubCollections(data, subCollectionWriters);
@@ -431,7 +477,7 @@ export class AngularFirestoreDeep {
 
     // console.log(Object.entries(subCollections).keys(), Object.entries(subCollections).values());
 
-    const res$ = this.add$<A>(currentDoc as A, collectionFs, docId).pipe(
+    const res$ = this.add$<A>(currentDoc as A, collectionFs, isAddDates, docId).pipe(
       // tap(val => console.log(val)),
 
       /* Add Sub/sub collections*/
@@ -458,7 +504,8 @@ export class AngularFirestoreDeep {
             if (subDocId !== undefined) { /* not undefined so save it as a single doc under that docId */
 
               /* the pipe only matters for the return subCollectionValue not for writing the data */
-              const subWriter = this.addDeep$(subCollectionValue as FirestoreItem, subCollectionFs, subSubCollectionWriters, subDocId).pipe(
+              const subWriter = this.addDeep$(subCollectionValue as FirestoreItem,
+                                              subCollectionFs, subSubCollectionWriters, isAddDates, subDocId).pipe(
                 map(item => {
                   // return {[key]: item};
                   return {key: subCollectionKey, value: item}; /* key and subCollectionValue as separate k,v properties */
@@ -470,7 +517,7 @@ export class AngularFirestoreDeep {
               subCollectionValue.forEach((arrayValue: FirestoreItem) => {
 
                 /* the pipe only matters for the return subCollectionValue not for writing the data */
-                const subWriter = this.addDeep$(arrayValue, subCollectionFs, subSubCollectionWriters).pipe(
+                const subWriter = this.addDeep$(arrayValue, subCollectionFs, subSubCollectionWriters, isAddDates).pipe(
                   map(item => {
                     // return {[key]: [item]};
                     /* key and subCollectionValue as separate k,v properties -- subCollectionValue in an array */
@@ -485,7 +532,7 @@ export class AngularFirestoreDeep {
             subDocId = subDocId !== undefined ? subDocId : this.defaultDocId;
 
             /* the pipe only matters for the return subCollectionValue not for writing the data */
-            const subWriter = this.addDeep$(subCollectionValue, subCollectionFs, subSubCollectionWriters, subDocId).pipe(
+            const subWriter = this.addDeep$(subCollectionValue, subCollectionFs, subSubCollectionWriters, isAddDates, subDocId).pipe(
               map(item => {
                 // return {[key]: item};
                 return {key: subCollectionKey, value: item}; /* key and subCollectionValue as separate k,v properties */
@@ -550,19 +597,27 @@ export class AngularFirestoreDeep {
 
   /**
    * Goes through each level and removes DbItemExtras
-   * In case you wish to save the data
+   * In case you wish to save the data.
+   *
+   *
    */
   public cleanExtrasFromData<A extends FirestoreItem>(data: A, subCollectionWriters: SubCollectionWriter[]): A {
 
     // const dataToBeCleaned = cloneDeep(data); /* clone data so we dont modify the original */
-    const dataToBeCleaned = data;
-    return this.removeDataExtrasRecursiveHelper(dataToBeCleaned, subCollectionWriters) as A;
+    // const dataToBeCleaned = data;
+    return this.removeDataExtrasRecursiveHelper(data, subCollectionWriters) as A;
   }
 
+  /**
+   * Recursive method to clean FirebaseDbItem properties from the dbItem
+   *
+   * @param dbItem the data to be cleaned
+   * @param subCollectionWriters list of SubCollectionWriters to handle sub collections
+   */
   protected removeDataExtrasRecursiveHelper<A extends FirestoreItem>(dbItem: A, subCollectionWriters: SubCollectionWriter[]): A {
 
     // tslint:disable-next-line:no-console
-    console.time('removeDataExtrasRecursiveHelper');
+    // console.time('removeDataExtrasRecursiveHelper');
 
     // const extraPropertyNames: string[] = Object.getOwnPropertyNames(new DbItemExtras());
     const extraPropertyNames: string[] = ['id', 'path', 'ref', 'docFs', 'isExists'];
@@ -576,14 +631,14 @@ export class AngularFirestoreDeep {
       if (Array.isArray(dbItem[col.name])) { /* property is array so will contain multiple docs */
 
         const docs: FirestoreItem[] = dbItem[col.name];
-        docs.forEach(d => {
+        docs.forEach((d, i) => {
 
           if (col.subCollectionWriters) {
             this.removeDataExtrasRecursiveHelper(d, col.subCollectionWriters);
           } else {
             /*  */
             for (const extraPropertyName of extraPropertyNames) {
-              delete dbItem[col.name][extraPropertyName];
+              delete dbItem[col.name][i][extraPropertyName];
             }
           }
         });
@@ -602,7 +657,7 @@ export class AngularFirestoreDeep {
     });
 
     // tslint:disable-next-line:no-console
-    console.timeEnd('removeDataExtrasRecursiveHelper');
+    // console.timeEnd('removeDataExtrasRecursiveHelper');
 
     return dbItem;
 
@@ -613,27 +668,27 @@ export class AngularFirestoreDeep {
    * and then delete the old doc.
    * returns the new doc once the delete is done.
    */
-  public changeDocName$<A extends FirestoreItem>(docFs: AngularFirestoreDocument,
-                                                 subCollectionQueries: SubCollectionQuery[],
-                                                 subCollectionWriters: SubCollectionWriter[],
-                                                 newName: string): Observable<any> {
+  public changeDocId$<A extends FirestoreItem>(docFs: AngularFirestoreDocument,
+                                               subCollectionQueries: SubCollectionQuery[],
+                                               subCollectionWriters: SubCollectionWriter[],
+                                               newId: string): Observable<any> {
 
     const collectionFs: AngularFirestoreCollection = this.ngFirestore.collection(docFs.ref.parent);
 
-
     const res$ = this.listenForDocDeep$(docFs, subCollectionQueries).pipe(
       take(1),
-      // tap(data => console.log(data)),
-      map((oldData: A) => this.removeDataExtrasRecursiveHelper(oldData, subCollectionWriters)),
-      // tap(data => console.log(data)),
+      tap(data => {
+        console.log(data);
+      }),
+      map((oldData: A) => this.cleanExtrasFromData(oldData, subCollectionWriters)),
+      tap(data => console.log(data)),
       mergeMap((oldData: A) => {
-
-        return this.addDeep$(oldData, collectionFs, subCollectionWriters, newName).pipe( /* add the data under newName*/
-          // mergeMap(newData => { /* delete the old doc */
-          //   return this.deleteDeep$(docFs, subCollectionQueries).pipe(
-          //     mapTo(newData) /* keep the new data */
-          //   );
-          // }),
+        return this.addDeep$(oldData, collectionFs, subCollectionWriters, false, newId).pipe( /* add the data under id*/
+          mergeMap(newData => { /* delete the old doc */
+            return this.deleteDeep$(docFs, subCollectionQueries).pipe(
+              map(() => newData) /* keep the new data */
+            );
+          }),
           // mergeMap(newData => {
           //   const newDocFs = this.ngFirestore.doc(newData.path);
           //   return this.listenForDocDeep$<A>(newDocFs, subCollectionQueries);  /* switch to listening to the new doc*/
@@ -641,19 +696,19 @@ export class AngularFirestoreDeep {
         );
       }),
       catchError(err => {
-        console.log('Failed to Change Doc Name: ' + err);
+        console.log('Failed to Change Doc Id: ' + err);
         throw err;
       })
     );
 
     return this.handleRes$(res$,
       'changeDocName$',
-      {docFs, subCollectionQueries, subCollectionWriters, newName},
+      {docFs, subCollectionQueries, subCollectionWriters, newName: newId},
       'Failed to Change Doc Name'
     );
   }
 
-  protected update$<A>(data: A, docFs: AngularFirestoreDocument): Observable<boolean> {
+  public update$<A>(data: A, docFs: AngularFirestoreDocument, isAddModifiedDate: boolean = true): Observable<boolean> {
     /**
      * transforms the promise to an observable
      */
@@ -661,7 +716,9 @@ export class AngularFirestoreDeep {
       mergeMap(() => {
         let res$: Observable<any>;
 
-        data = addModifiedDate(data);
+        if (isAddModifiedDate) {
+          data = addModifiedDate(data);
+        }
 
         res$ = from(docFs.update(data));
 
@@ -679,11 +736,12 @@ export class AngularFirestoreDeep {
    */
   public updateDeep$<A>(data: A,
                         docFs: AngularFirestoreDocument,
-                        subCollectionWriters: SubCollectionWriter[]): Observable<any> {
+                        subCollectionWriters: SubCollectionWriter[],
+                        isAddModifiedDate: boolean = true): Observable<any> {
 
-    const batch = this.updateDeepToBatchHelper(data, docFs, subCollectionWriters);
+    const batch = this.updateDeepToBatchHelper(data, docFs, subCollectionWriters, isAddModifiedDate);
 
-    const res$ = this.batchCommit(batch);
+    const res$ = this.batchCommit$(batch);
 
     return this.handleRes$(res$, 'updateDeep$', {data, docFs, subCollectionWriters}, 'Updated', 'Failed to Update Document').pipe(
       take(1) /* no need to unsub */
@@ -696,16 +754,20 @@ export class AngularFirestoreDeep {
   protected updateDeepToBatchHelper<A>(data: A,
                                        docFs: AngularFirestoreDocument,
                                        subCollectionWriters: SubCollectionWriter[],
+                                       isAddModifiedDate: boolean = true,
                                        batch?: WriteBatch): WriteBatch {
 
     if (batch === undefined) { batch = this.ngFirestore.firestore.batch(); }
+
+    if (isAddModifiedDate) {
+      data = addModifiedDate(data);
+    }
 
     const split = this.splitDataIntoCurrentDocAndSubCollections(data, subCollectionWriters);
     const currentDoc = split.currentDoc;
     const subCollections = split.subCollections;
 
     // console.log(currentDoc, subCollections);
-
     batch.update(docFs.ref, currentDoc);
 
     for (const [subCollectionKey, subDocUpdateValue] of Object.entries(subCollections)) {
@@ -722,47 +784,75 @@ export class AngularFirestoreDeep {
 
       const subDocFs = docFs.collection(subCollectionKey).doc(subDocId);
 
-      batch = this.updateDeepToBatchHelper(subDocUpdateValue, subDocFs, subSubCollectionWriters, batch);
+      batch = this.updateDeepToBatchHelper(subDocUpdateValue, subDocFs, subSubCollectionWriters, isAddModifiedDate, batch);
     }
 
     return batch;
   }
 
-
-  protected updateDocByPath$<A>(path: string, data: A): Observable<any> {
+  /**
+   * Update the firestore document by path
+   *
+   * @param path path of document to update
+   * @param data data to add/update
+   * @param isAddModifiedDate if true the modifiedDate is added/updated
+   */
+  public updateDocByPath$<A>(path: string, data: A, isAddModifiedDate: boolean = true): Observable<any> {
     const doc = this.ngFirestore.doc(path);
-    return this.update$(data, doc);
+    return this.update$(data, doc, isAddModifiedDate);
   }
 
-  protected deleteDocByPath(path: string): Observable<any> {
+  /**
+   * Delete firestore document by path
+   *
+   * @param path path of document to update
+   */
+  public deleteDocByPath$(path: string): Observable<any> {
     const doc = this.ngFirestore.doc(path);
     return this.delete$(doc);
   }
 
-  protected updateMultiple$<A>(docs: AngularFirestoreDocument[], data: A): Observable<any> {
+  /**
+   * Update/ add data to the firestore documents
+   *
+   * @param docsFs list of AngularFirestoreDocument to be have their data updated
+   * @param data data to add/update
+   * @param isAddModifiedDate if true the modifiedDate is added/updated
+   */
+  public updateMultiple$<A>(docsFs: AngularFirestoreDocument[], data: A, isAddModifiedDate: boolean = true): Observable<any> {
     const batch = this.ngFirestore.firestore.batch();
 
+    if (isAddModifiedDate) {
+      data = addModifiedDate(data);
+    }
 
-    docs.forEach((doc) => {
+    docsFs.forEach((doc) => {
       batch.update(doc.ref, data);
     });
 
-    return this.batchCommit(batch);
+    return this.batchCommit$(batch);
   }
 
-  protected updateMultipleByPaths$<A>(paths: string[], data: A): Observable<any> {
+  /**
+   * Update the firestore documents by paths
+   *
+   * @param path list of paths of documents to be have their data updated
+   * @param data data to add/update
+   * @param isAddModifiedDate if true the modifiedDate is added/updated
+   */
+  public updateMultipleByPaths$<A>(paths: string[], data: A, isAddModifiedDate: boolean = true): Observable<any> {
     const docsFs: AngularFirestoreDocument[] = [];
 
     paths.forEach(path => {
       docsFs.push(this.ngFirestore.doc(path));
     });
 
-    return this.updateMultiple$<A>(docsFs, data);
+    return this.updateMultiple$<A>(docsFs, data, isAddModifiedDate);
   }
 
   /* Move Item in Array */
 
-  protected moveItemInArray$<A extends FirestoreItemFullWithIndex>(array: A[], fromIndex: number, toIndex: number): Observable<any> {
+  public moveItemInArray$<A extends FirestoreItemFullWithIndex>(array: A[], fromIndex: number, toIndex: number): Observable<any> {
     // console.log(fromIndex, toIndex);
 
     if (fromIndex == null || toIndex == null || fromIndex === toIndex || array.length <= 0) { // we didnt really move anything
@@ -771,13 +861,13 @@ export class AngularFirestoreDeep {
 
     const batch = this.getBatchFromMoveItemInIndexedDocs(array as FirestoreItemFullWithIndex[], fromIndex, toIndex);
 
-    return this.batchCommit(batch);
+    return this.batchCommit$(batch);
   }
 
-  protected getBatchFromMoveItemInIndexedDocs<A extends FirestoreItemFullWithIndex>(array: Array<A>,
-                                                                                    fromIndex: number,
-                                                                                    toIndex: number,
-                                                                                    useCopy = false): firebase.firestore.WriteBatch {
+  public getBatchFromMoveItemInIndexedDocs<A extends FirestoreItemFullWithIndex>(array: Array<A>,
+                                                                                 fromIndex: number,
+                                                                                 toIndex: number,
+                                                                                 useCopy = false): firebase.firestore.WriteBatch {
     /**
      * Moved item within the same list so we need to update the index of all items in the list;
      * Use a copy if you dont wish to update the given array, for example when you watch to just listen for the change of the db..
@@ -807,7 +897,7 @@ export class AngularFirestoreDeep {
 
     let i = lowestIndex;
     for (const item of listSliceToUpdate) {
-      const ref = getRefFromPath(item.path) as DocumentReference;
+      const ref = getRefFromPath(item.path, this.ngFirestore) as DocumentReference;
       batch.update(ref, {index: i});
       i++;
     }
@@ -815,12 +905,13 @@ export class AngularFirestoreDeep {
     return batch;
   }
 
-  protected getBatchFromTransferItemInIndexedDocs<A extends FirestoreItemFullWithIndex>(previousArray: A[],
-                                                                                        currentArray: A[],
-                                                                                        previousIndex: number,
-                                                                                        currentIndex: number,
-                                                                                        additionalDataUpdateOnMovedItem?: {[key: string]: any},
-                                                                                        useCopy = false): firebase.firestore.WriteBatch {
+  protected getBatchFromTransferItemInIndexedDocs<A extends FirestoreItemFullWithIndex>(
+    previousArray: A[],
+    currentArray: A[],
+    previousIndex: number,
+    currentIndex: number,
+    additionalDataUpdateOnMovedItem?: {[key: string]: any},
+    useCopy = false): firebase.firestore.WriteBatch {
 
     /**
      * Used mainly for drag and drop scenarios where we drag an item from one array to another and the the docs have an index attribute.
@@ -842,14 +933,14 @@ export class AngularFirestoreDeep {
 
     if (additionalDataUpdateOnMovedItem !== undefined) {
       const movedItem = currentArray[currentIndex];
-      const movedPartRef = getRefFromPath(movedItem.path) as DocumentReference;
+      const movedPartRef = getRefFromPath(movedItem.path, this.ngFirestore) as DocumentReference;
       batch.update(movedPartRef, additionalDataUpdateOnMovedItem);
     }
 
     const currentArraySliceToUpdate: A[] = usedCurrentArray.slice(currentIndex);
     let i = currentIndex;
     for (const item of currentArraySliceToUpdate) {
-      const ref = getRefFromPath(item.path) as DocumentReference;
+      const ref = getRefFromPath(item.path, this.ngFirestore) as DocumentReference;
       batch.update(ref, {index: i});
       i++;
     }
@@ -857,7 +948,7 @@ export class AngularFirestoreDeep {
     const prevArraySliceToUpdate: A[] = usedPreviousArray.slice(previousIndex);
     i = previousIndex;
     for (const item of prevArraySliceToUpdate) {
-      const ref = getRefFromPath(item.path) as DocumentReference;
+      const ref = getRefFromPath(item.path, this.ngFirestore) as DocumentReference;
       batch.update(ref, {index: i});
       i++;
     }
@@ -865,7 +956,7 @@ export class AngularFirestoreDeep {
     return batch;
   }
 
-  protected getBatchFromDeleteItemInIndexedDocs<A extends FirestoreItemFullWithIndex>(array: A[]): firebase.firestore.WriteBatch {
+  public getBatchFromDeleteItemInIndexedDocs<A extends FirestoreItemFullWithIndex>(array: A[]): firebase.firestore.WriteBatch {
 
     /**
      * Run this on collections with a fixed order using an index: number attribute;
@@ -877,7 +968,7 @@ export class AngularFirestoreDeep {
 
     array.forEach((item, index) => {
       if (item.index !== index) {
-        const ref = getRefFromPath(item.path) as DocumentReference;
+        const ref = getRefFromPath(item.path, this.ngFirestore) as DocumentReference;
         batch.update(ref, {index});
       }
     });
@@ -887,12 +978,12 @@ export class AngularFirestoreDeep {
 
   protected updateIndexAfterDeleteInIndexedDocs<A extends FirestoreItemFullWithIndex>(array: A[]): Observable<any> {
     const batch = this.getBatchFromDeleteItemInIndexedDocs(array);
-    return this.batchCommit(batch);
+    return this.batchCommit$(batch);
   }
 
   /* ----------  DELETE -------------- */
 
-  protected delete$(docFs: AngularFirestoreDocument): Observable<any> {
+  public delete$(docFs: AngularFirestoreDocument): Observable<any> {
 
     return of(null).pipe(
       mergeMap(() => {
@@ -907,19 +998,19 @@ export class AngularFirestoreDeep {
     );
   }
 
-  protected deleteMultiple$(docsFs: AngularFirestoreDocument[]): Observable<any> {
+  public deleteMultiple$(docsFs: AngularFirestoreDocument[]): Observable<any> {
     const batch = this.ngFirestore.firestore.batch();
 
     docsFs.forEach((doc) => {
       batch.delete(doc.ref);
     });
 
-    const res$ = this.batchCommit(batch);
+    const res$ = this.batchCommit$(batch);
 
     return this.handleRes$(res$, 'deleteMultiple$', docsFs.map(doc => doc.ref.path), 'Deleted', 'Failed to Delete Multiple');
   }
 
-  protected deleteMultipleByPaths$(paths: string[]): Observable<any> {
+  public deleteMultipleByPaths$(paths: string[]): Observable<any> {
     const docsFs: AngularFirestoreDocument[] = [];
 
     paths.forEach(path => {
@@ -929,7 +1020,12 @@ export class AngularFirestoreDeep {
     return this.deleteMultiple$(docsFs);
   }
 
-  protected deleteMultipleDeep$(docsFs: AngularFirestoreDocument[], subCollectionQueries: SubCollectionQuery[]): Observable<any> {
+  /**
+   *
+   * @param docsFs - A list of AngularFireDocument that are to be deleted
+   * @param subCollectionQueries -
+   */
+  public deleteMultipleDeep$(docsFs: AngularFirestoreDocument[], subCollectionQueries: SubCollectionQuery[]): Observable<any> {
 
     const mainDocLists$: Array<Observable<any>> = [];
 
@@ -971,7 +1067,7 @@ export class AngularFirestoreDeep {
     return this.handleRes$(res$, 'deleteDeep$', {docFs, subCollectionQueries}, 'Deleted', 'Failed to Delete');
   }
 
-  protected deleteDeepByItem$(item: FirestoreItem, subCollectionQueries: SubCollectionQuery[]): Observable<any> {
+  public deleteDeepByItem$(item: FirestoreItem, subCollectionQueries: SubCollectionQuery[]): Observable<any> {
 
     // console.log('deleteDeepByItem$');
 
@@ -1008,6 +1104,7 @@ export class AngularFirestoreDeep {
     Observable<AngularFirestoreDocument[]> {
 
     return this.listenForDocDeep$(docFs, subCollectionQueries).pipe(
+      take(1),
       map(item => this.getPathsFromDbItemDeepRecursiveHelper(item, subCollectionQueries)),
       // tap(pathList => console.log(pathList)),
       map((pathList: A) => {
@@ -1113,7 +1210,7 @@ export class AngularFirestoreDeep {
   /**
    * Turn a batch into an Observable instead of Promise.
    */
-  protected batchCommit(batch: firebase.firestore.WriteBatch): Observable<any> {
+  protected batchCommit$(batch: firebase.firestore.WriteBatch): Observable<any> {
     return of(null).pipe(
       mergeMap(() => {
         let res$: Observable<any>;
