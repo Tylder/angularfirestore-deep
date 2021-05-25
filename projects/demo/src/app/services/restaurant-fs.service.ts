@@ -1,13 +1,9 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
 import {RestaurantItem, ReviewItem} from '../models/restaurant';
-// import {AngularFirestoreDeep, SubCollectionQuery, SubCollectionWriter} from 'angularfirestore-deep';
+import {AngularFirestoreDeep, SubCollectionQuery, SubCollectionWriter} from 'angularfirestore-deep';
 import {Observable} from 'rxjs';
 import {map, switchMap, take, tap} from 'rxjs/operators';
-import {SubCollectionWriter} from '../../../../angularfirestore-deep/src/lib/sub-collection-writer';
-import {SubCollectionQuery} from '../../../../angularfirestore-deep/src/lib/sub-collection-query';
-import {AngularFirestoreDeep} from '../../../../angularfirestore-deep/src/lib/angular-firestore-deep';
-
 
 const restaurantSubCollectionWriters: SubCollectionWriter[] = [
   { name: 'reviews' }, // make reviews a sub collection
@@ -101,17 +97,16 @@ export class RestaurantFsService {
   }
 
   /* EDIT/UPDATE */
-  editRestaurantById$(restaurantId: string, data: object): Observable<any> {
-    const docFs: AngularFirestoreDocument<RestaurantItem> = this.restaurantCollectionFs.doc(restaurantId);
-    return this.ngFirestoreDeep.updateDeep$(data, docFs, restaurantSubCollectionWriters);
+  editRestaurant$(restaurant: RestaurantItem, data: object): Observable<any> {
+    return this.ngFirestoreDeep.updateDeep$(data, restaurant.docFs, restaurantSubCollectionWriters);
   }
 
   changeIdOfRestaurant$(restaurant: RestaurantItem, newId: string): Observable<RestaurantItem> {
 
     return this.ngFirestoreDeep.changeDocId$(restaurant.docFs,
+                                             newId,
                                              restaurantSubCollectionQueries,
-                                             restaurantSubCollectionWriters,
-                                             newId);
+                                             restaurantSubCollectionWriters);
   }
 
   /**
@@ -121,7 +116,7 @@ export class RestaurantFsService {
     const reviewCollectionFs: AngularFirestoreCollection<ReviewItem> =
       this.restaurantCollectionFs.doc(restaurant.id).collection('reviews');
 
-    return this.ngFirestoreDeep.add$(review, reviewCollectionFs).pipe(
+    return this.ngFirestoreDeep.addDeep$(review, reviewCollectionFs).pipe(
       switchMap(() => {
         // calculate new average score
         const scoreSum: number = restaurant.reviews
@@ -130,7 +125,7 @@ export class RestaurantFsService {
         let averageReviewScore: number = scoreSum / (restaurant.reviews.length + 1);
         averageReviewScore = parseFloat(averageReviewScore.toFixed(1)); // round to 1 decimal
 
-        return this.ngFirestoreDeep.update$({averageReviewScore}, restaurant.docFs); // update averageReviewScore
+        return this.ngFirestoreDeep.updateDeep$({averageReviewScore}, restaurant.docFs); // update averageReviewScore
       })
     );
   }

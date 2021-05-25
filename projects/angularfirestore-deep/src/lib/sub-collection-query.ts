@@ -6,7 +6,7 @@ import {QueryFn} from '@angular/fire/firestore/interfaces';
  * For Listening to a Document and multiple sub Collections in that Document
  */
 
-export class SubCollectionQuery {
+export interface SubCollectionQuery {
 
   /** the name of the subCollection to be read. */
   name: string;

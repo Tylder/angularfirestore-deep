@@ -33,7 +33,7 @@ AngularFireStore-Deep is meant to help developers solve these issues.
 > <br>
 > [Delete](https://angularfirestore-deep.web.app/docs/additional-documentation/actions/delete.html)
 > <br>
-> [Edit Name](https://angularfirestore-deep.web.app/docs/additional-documentation/actions/edit-name.html)
+> [Edit Id](https://angularfirestore-deep.web.app/docs/additional-documentation/actions/edit-id.html)
 
 
 ### Demo

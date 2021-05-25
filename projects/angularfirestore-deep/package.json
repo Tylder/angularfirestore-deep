@@ -1,6 +1,6 @@
 {
   "name": "angularfirestore-deep",
-  "version": "0.0.1",
+  "version": "1.0.2",
   "scripts": {
     "doc": "npx compodoc -p tsconfig.doc.json --includes additional-docs"
   },
@@ -32,6 +32,6 @@
     "rxjs": ">=7.x"
   },
   "dependencies": {
-    "tslib": "^2.0.0"
+    "tslib": ">=2.0.0"
   }
 }

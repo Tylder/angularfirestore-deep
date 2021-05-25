@@ -24,8 +24,8 @@
         "file": "actions/delete.md"
       },
       {
-        "title": "Edit Name",
-        "file": "actions/edit_name.md"
+        "title": "Edit Id",
+        "file": "actions/edit_id.md"
       }
     ]
   }

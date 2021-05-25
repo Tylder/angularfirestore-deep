@@ -4,7 +4,6 @@
 
 #### Method Documentation
 
-- [delete$](../../classes/AngularFirestoreDeep.html#delete$)
 - [deleteDeep$](../../classes/AngularFirestoreDeep.html#deleteDeep$)
 - [deleteDeepByItem$](../../classes/AngularFirestoreDeep.html#deleteDeepByItem$)
 - [deleteDocByPath$](../../classes/AngularFirestoreDeep.html#deleteDocByPath$)
@@ -56,7 +55,7 @@ deleteAllRestaurants$(): Observable<any> {
 
 #####  Sub Collection Queries used in the examples.
 
-[SubCollectionQuery documentation](../../classes/SubCollectionQuery.html)
+[SubCollectionQuery documentation](../../interfaces/SubCollectionQuery.html)
 
 ```typescript
 const restaurantSubCollectionQueries: SubCollectionQuery[] = [

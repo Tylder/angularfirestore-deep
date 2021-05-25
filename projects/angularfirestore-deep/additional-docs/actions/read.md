@@ -4,7 +4,6 @@
 
 #### Method Documentation
 
-- [listenForDoc$](../../classes/AngularFirestoreDeep.html#listenForDoc$)
 - [listenForCollection$](../../classes/AngularFirestoreDeep.html#listenForCollection$)
 - [listenForDocDeep$](../../classes/AngularFirestoreDeep.html#listenForDocDeep$)
 - [listenForCollectionRecursively$](../../classes/AngularFirestoreDeep.html#listenForCollectionRecursively$)
@@ -76,7 +75,7 @@ This is done for the following reasons:
 
 #####  Sub Collection Queries used in the examples.
 
-[SubCollectionQuery documentation]()
+[SubCollectionQuery documentation](../../interfaces/SubCollectionQuery.html)
 
 ```typescript
 const restaurantSubCollectionQueries: SubCollectionQuery[] = [

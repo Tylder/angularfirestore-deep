@@ -1,4 +1,4 @@
-import {FirestoreItem} from '../../../../angularfirestore-deep/src/lib/models/firestoreItem';
+import {FirestoreItem} from 'angularfirestore-deep';
 
 export interface RestaurantItem extends FirestoreItem {
   name: string;

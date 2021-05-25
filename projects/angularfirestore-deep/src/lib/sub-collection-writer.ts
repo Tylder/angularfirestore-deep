@@ -95,7 +95,7 @@
  *      }
  *    ];
  */
-export class SubCollectionWriter {
+export interface SubCollectionWriter {
   /** the name of the subCollection to be created. If a key in the data to be written is the same as this name it will be
    * saved separately in a sub collection.
    */
@@ -114,6 +114,6 @@ export class SubCollectionWriter {
   /** if true then the next level subCollectionWriters will be placed at the same level as this with a reference back
    * to the linked data, good for secure subcols
    */
-  isFlat?: boolean = false;
+  isFlat?: boolean;
 }
 

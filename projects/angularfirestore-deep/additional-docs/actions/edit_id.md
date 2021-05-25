@@ -1,27 +1,32 @@
-# Update
+# Edit Document Id
 
 #### For a working demo checkout: [Demo](../../../demo), or [Code](https://github.com/Tylder/angularfirestore-deep)
 
 #### Method Documentation
 
-- [updateDeep$](../../classes/AngularFirestoreDeep.html#updateDeep$)
-- [updateDeepByPath$](../../classes/AngularFirestoreDeep.html#updateDeepByPath$)
-- [updateMultiple$](../../classes/AngularFirestoreDeep.html#updateMultiple$)
-- [updateMultipleByPaths$](../../classes/AngularFirestoreDeep.html#updateMultipleByPaths$)
+- [changeDocId$](../../classes/AngularFirestoreDeep.html#changeDocId$)
 
-Works basically the same as [adding documents](write.html) in that the data can be split up into child collections and documents
-if specified in the SubCollectionWriters.
+Firestore does not provide a method for changing the Id of a document.
+The only way is to copy the document and all its child documents and then create a new document with all the child documents.
+Once this is done the old document is deleted.
 
-##### Update Document
+##### Edit name of document.
+If there are child documents your should provide subCollectionQueries and subCollectionWriters.
 
 ```typescript
-editRestaurant$(restaurant: RestaurantItem, data: object): Observable<any> {
-    return this.ngFirestoreDeep.updateDeep$(data, restaurant.docFs, restaurantSubCollectionWriters);
+changeIdOfRestaurant$(restaurant: RestaurantItem, newId: string): Observable<RestaurantItem> {
+
+    return this.ngFirestoreDeep.changeDocId$(restaurant.docFs,
+                                             newId,
+                                             restaurantSubCollectionQueries,
+                                             restaurantSubCollectionWriters);
 }
 ```
 
-#####  Sub Collection Writers used in the examples.
+#####  Sub Collection Queries and Writers used in the examples.
 
+[SubCollectionQuery documentation](../../interfaces/SubCollectionQuery.html)
+<br>
 [SubCollectionWriter documentation](../../interfaces/SubCollectionWriter.html)
 
 ```typescript

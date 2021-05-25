@@ -1,11 +1,11 @@
 # Actions
 
-> [Read](./actions/read.html)
+> [Read / Listen](./actions/read.html)
 > <br>
-> [Write](./actions/write.html)
+> [Write / Add](./actions/write.html)
 > <br>
 > [Update](./actions/update.html)
 > <br>
 > [Delete](./actions/delete.html)
 > <br>
-> [Edit Name](./actions/edit-name.html)
+> [Edit Document Id](./actions/edit-id.html)
