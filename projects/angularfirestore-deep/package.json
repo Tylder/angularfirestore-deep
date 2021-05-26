@@ -29,7 +29,7 @@
     "@angular/cdk": ">=11",
     "@angular/fire": ">=6.x",
     "firebase": ">=8.6.1",
-    "rxjs": ">=7.x"
+    "rxjs": ">=6.6.0"
   },
   "dependencies": {
     "tslib": ">=2.0.0"

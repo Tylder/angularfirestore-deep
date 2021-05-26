@@ -1150,15 +1150,15 @@ export class AngularFirestoreDeep {
    */
   protected getFirestoreDocumentsDeep$<A extends FirestoreItem>(docFs: AngularFirestoreDocument,
                                                                 subCollectionQueries: SubCollectionQuery[] = []):
-    Observable<AngularFirestoreDocument[]> {
+    Observable<AngularFirestoreDocument<A>[]> {
 
     return this.listenForDocDeep$(docFs, subCollectionQueries).pipe(
       take(1),
       map(item => this.getPathsFromDbItemDeepRecursiveHelper(item, subCollectionQueries)),
       // tap(pathList => console.log(pathList)),
-      map((pathList: A) => {
-        const docFsList: AngularFirestoreDocument[] = [];
-        pathList.forEach(path => docFsList.push(this.ngFirestore.doc(path)));
+      map((pathList: string[]) => {
+        const docFsList: AngularFirestoreDocument<A>[] = [];
+        pathList.forEach(path => docFsList.push(this.ngFirestore.doc<A>(path)));
         return docFsList;
       }),
       // tap(item => console.log(item)),
@@ -1311,6 +1311,4 @@ export class AngularFirestoreDeep {
 
     );
   }
-
-
 }
