@@ -1,8 +1,14 @@
 /** Helper method to get reference from path, the path can be either to a Document or Collection */
-import {Action, AngularFirestore, AngularFirestoreDocument, DocumentData, DocumentReference} from '@angular/fire/firestore';
+import {
+  Action,
+  AngularFirestore,
+  AngularFirestoreCollection,
+  AngularFirestoreDocument,
+  DocumentData,
+  DocumentReference
+} from '@angular/fire/firestore';
 import {CollectionReference, DocumentSnapshot} from '@angular/fire/firestore/interfaces';
 import {FirestoreItem} from './models/firestoreItem';
-import {AngularFirestoreCollection} from '@angular/fire/firestore/collection/collection';
 import {map, take} from 'rxjs/operators';
 import firebase from 'firebase';
 import {Observable} from 'rxjs';

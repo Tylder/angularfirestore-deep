@@ -2,6 +2,7 @@ import {combineLatest, from, Observable, of} from 'rxjs';
 import {
   Action,
   AngularFirestore,
+  AngularFirestoreCollection,
   AngularFirestoreDocument,
   DocumentChangeAction,
   DocumentChangeType,
@@ -9,7 +10,6 @@ import {
   DocumentSnapshotExists
 } from '@angular/fire/firestore';
 import {catchError, filter, map, mergeMap, switchMap, take, tap} from 'rxjs/operators';
-import {AngularFirestoreCollection} from '@angular/fire/firestore/collection/collection';
 import {moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 import firebase from 'firebase';
