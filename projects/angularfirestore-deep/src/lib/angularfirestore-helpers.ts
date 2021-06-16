@@ -4,8 +4,8 @@ import {CollectionReference, DocumentSnapshot} from '@angular/fire/firestore/int
 import {FirestoreItem} from './models/firestoreItem';
 import {AngularFirestoreCollection} from '@angular/fire/firestore/collection/collection';
 import {map, take} from 'rxjs/operators';
-import {Observable} from 'rxjs/dist/types';
 import firebase from 'firebase';
+import {Observable} from 'rxjs';
 
 /** Helper method to get reference from path, the path can be either to a Document or Collection */
 export function getRefFromPath(path: string, ngFirestore: AngularFirestore): DocumentReference | CollectionReference {
